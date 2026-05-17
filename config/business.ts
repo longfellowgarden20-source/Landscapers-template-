@@ -12,6 +12,11 @@ export const business = {
   // --- Supabase (Settings → API in your Supabase project) ---
   supabaseUrl: 'https://gctajxnmxbeuerncdjch.supabase.co',
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjdGFqeG5teGJldWVybmNkamNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNTk1ODgsImV4cCI6MjA5NDYzNTU4OH0.I6grLHJI_1BCdYmGYxA4pCIlzhzo3TCjS62DiBqqwcE',
+  // WARNING: never expose this on a public/client-facing page — admin only
+  supabaseServiceKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjdGFqeG5teGJldWVybmNkamNoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTA1OTU4OCwiZXhwIjoyMDk0NjM1NTg4fQ.3DS8zOMCQu9E_4v6km_q0txBAbrPNnbakZW_kcn85zA',
+
+  // --- Admin dashboard password (change this per client) ---
+  adminPassword: 'greenedge2026',
 
   // --- Services shown in the booking form dropdown ---
   services: [
