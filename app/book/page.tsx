@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
 import { business } from '../../config/business'
@@ -70,6 +70,37 @@ export default function BookPage() {
   const [selectedTime, setSelectedTime] = useState('')
   const [form, setForm] = useState({ name: '', email: '', phone: '', notes: '' })
 
+  // booked slots for the selected date
+  const [bookedTimes, setBookedTimes] = useState<string[]>([])
+  const [loadingSlots, setLoadingSlots] = useState(false)
+
+  const fetchBookedSlots = useCallback(async (date: Date) => {
+    setLoadingSlots(true)
+    try {
+      const dateStr = formatDateValue(date)
+      const res = await fetch(
+        `${business.supabaseUrl}/rest/v1/appointments?select=time&date=eq.${dateStr}&status=neq.cancelled`,
+        {
+          headers: {
+            apikey: business.supabaseAnonKey,
+            Authorization: `Bearer ${business.supabaseAnonKey}`,
+          },
+        }
+      )
+      if (res.ok) {
+        const rows: { time: string }[] = await res.json()
+        setBookedTimes(rows.map((r) => r.time))
+      }
+    } finally {
+      setLoadingSlots(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (selectedDate) fetchBookedSlots(selectedDate)
+    else setBookedTimes([])
+  }, [selectedDate, fetchBookedSlots])
+
   const availableDates = useMemo(
     () => getDatesInWindow(business.bookingWindowDays, business.availableDays),
     []
@@ -115,7 +146,16 @@ export default function BookPage() {
         body: JSON.stringify(payload),
       })
 
-      if (!res.ok) throw new Error('Booking failed')
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        if (body?.code === '23505') {
+          setError('That time slot was just taken. Please go back and choose a different time.')
+          await fetchBookedSlots(selectedDate!)
+        } else {
+          throw new Error('Booking failed')
+        }
+        return
+      }
       setSubmitted(true)
     } catch {
       setError('Something went wrong. Please try again or call us directly.')
@@ -238,18 +278,33 @@ export default function BookPage() {
                 <div className="flex items-center gap-2 mb-4">
                   <Clock className="w-5 h-5 text-accent" />
                   <h2 className="text-xl font-bold text-slate-900">Pick a time</h2>
+                  {loadingSlots && <span className="text-xs text-slate-400 ml-1">Checking availability...</span>}
                 </div>
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                  {business.timeSlots.map((t) => (
-                    <button
-                      key={t}
-                      onClick={() => setSelectedTime(t)}
-                      className={`py-3 rounded-xl border-2 text-sm font-medium transition-all ${selectedTime === t ? 'border-accent bg-accent text-white' : 'border-slate-200 text-slate-700 hover:border-accent/50'}`}
-                    >
-                      {t}
-                    </button>
-                  ))}
+                  {business.timeSlots.map((t) => {
+                    const isBooked = bookedTimes.includes(t)
+                    const isSelected = selectedTime === t
+                    return (
+                      <button
+                        key={t}
+                        disabled={isBooked}
+                        onClick={() => setSelectedTime(t)}
+                        className={`py-3 rounded-xl border-2 text-sm font-medium transition-all ${
+                          isBooked
+                            ? 'border-slate-100 bg-slate-50 text-slate-300 cursor-not-allowed line-through'
+                            : isSelected
+                            ? 'border-accent bg-accent text-white'
+                            : 'border-slate-200 text-slate-700 hover:border-accent/50'
+                        }`}
+                      >
+                        {t}
+                      </button>
+                    )
+                  })}
                 </div>
+                {bookedTimes.length > 0 && (
+                  <p className="text-xs text-slate-400 mt-3">Strikethrough times are already booked.</p>
+                )}
               </div>
             )}
 
