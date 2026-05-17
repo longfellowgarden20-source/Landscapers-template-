@@ -54,8 +54,8 @@ export function Navigation() {
             <Link href="/contact" className="px-4 py-2 text-sm text-slate-700 hover:text-slate-900 font-medium transition-colors">
               Request a Quote
             </Link>
-            <Link href="/contact" className="px-4 py-2.5 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium">
-              Book Service
+            <Link href="/book" className="px-4 py-2.5 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium">
+              Book Appointment
             </Link>
           </div>
 
@@ -105,8 +105,8 @@ export function Navigation() {
                 <Link href="/contact" onClick={closeNav} className="w-full px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded transition-colors font-medium min-h-[44px]">
                   Request a Quote
                 </Link>
-                <Link href="/contact" onClick={closeNav} className="w-full px-4 py-3 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium min-h-[44px]">
-                  Get Started
+                <Link href="/book" onClick={closeNav} className="w-full px-4 py-3 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium min-h-[44px]">
+                  Book Appointment
                 </Link>
               </div>
             </div>
