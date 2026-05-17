@@ -4,51 +4,48 @@ import { Check } from 'lucide-react'
 
 const plans = [
   {
-    name: 'Website Refresh',
-    price: '2,500',
-    description: 'Perfect for businesses that need a modern online presence.',
+    name: 'Safety Inspection',
+    price: '149',
+    description: 'Identify hazards, code issues, and get clear repair recommendations.',
     features: [
-      '5-8 page website',
-      'Mobile-optimized design',
-      'Basic SEO setup',
-      'Contact forms',
-      '1 round of revisions',
-      'Email support',
-      '3 months free updates',
+      'Comprehensive home inspection',
+      'Breaker panel review',
+      'Outlet & switch testing',
+      'Grounding verification',
+      'Surge protection advice',
+      'Written safety report',
+      'No-obligation estimate',
     ],
-    cta: 'Get Started',
+    cta: 'Book Inspection',
     featured: false,
   },
   {
-    name: 'Custom Website',
-    price: '8,500',
-    description: 'For growing businesses that want conversion-focused design.',
+    name: 'Electrical Upgrade',
+    price: '1,250',
+    description: 'Ideal for kitchen remodels, panel upgrades, EV chargers, and modern lighting.',
     features: [
-      'Unlimited pages',
-      'Advanced design & UX',
-      'CMS integration',
-      'E-commerce ready',
-      'Analytics setup',
-      'Unlimited revisions',
-      '6 months free support',
-      'Performance optimization',
+      'Panel and circuit upgrades',
+      'New outlet and lighting installs',
+      'EV charger wiring',
+      'Smart home ready upgrades',
+      'Permitting assistance',
+      '1 year workmanship warranty',
     ],
-    cta: 'Start Project',
+    cta: 'Get Estimate',
     featured: true,
   },
   {
-    name: 'Enterprise Solution',
+    name: 'Commercial Maintenance',
     price: 'Custom',
-    description: 'For large organizations with complex needs and scale.',
+    description: 'Planned service and emergency support for businesses of any size.',
     features: [
-      'Fully custom platform',
-      'Advanced integrations',
-      'Dedicated account manager',
-      'Ongoing maintenance plan',
-      'Priority support',
-      'Training & documentation',
-      'Performance guarantee',
-      'Monthly optimization reports',
+      'Preventive maintenance',
+      'Lighting and power audits',
+      'Emergency response',
+      'Equipment replacement',
+      'Safety compliance checks',
+      'Priority scheduling',
+      'Service agreements',
     ],
     cta: 'Schedule Consultation',
     featured: false,
@@ -65,7 +62,7 @@ export function PricingSection() {
             Our Packages
           </h2>
           <p className="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
-            Transparent pricing for every stage of your digital journey. All packages include free consultation.
+            Transparent pricing for electrical service packages. All estimates are clear, upfront, and tailored to your needs.
           </p>
         </div>
 
@@ -101,13 +98,8 @@ export function PricingSection() {
 
                 {/* Price */}
                 <div className="mb-6">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl sm:text-5xl font-bold text-slate-950">
-                      {plan.price === 'Custom' ? 'Custom' : `$${plan.price}`}
-                    </span>
-                    {plan.price !== 'Custom' && (
-                      <span className="text-sm sm:text-base text-slate-600">/month</span>
-                    )}
+                  <div className="text-4xl sm:text-5xl font-bold text-slate-950">
+                    {plan.price === 'Custom' ? 'Custom' : `$${plan.price}`}
                   </div>
                 </div>
 
@@ -141,7 +133,7 @@ export function PricingSection() {
         {/* Footer note */}
         <div className="text-center mt-12 sm:mt-16">
           <p className="text-slate-600 text-sm sm:text-base">
-            Not sure which package is right? <span className="font-semibold">Schedule a free 30-min consultation</span> to discuss your needs.
+            Not sure which service is right? <span className="font-semibold">Contact us for a free consultation and custom electrician estimate.</span>
           </p>
         </div>
       </div>

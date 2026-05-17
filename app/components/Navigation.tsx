@@ -15,10 +15,10 @@ export function Navigation() {
           <div className="flex-shrink-0 flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                ✦
+                ⚡
               </div>
               <span className="hidden sm:inline font-display text-xl font-bold text-slate-900">
-                Nexus
+                BrightSpark
               </span>
             </Link>
           </div>
@@ -51,7 +51,7 @@ export function Navigation() {
               Request a Quote
             </Link>
             <Link href="/contact" className="px-4 py-2.5 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium">
-              Get Started
+              Book Service
             </Link>
           </div>
 

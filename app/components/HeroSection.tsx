@@ -19,25 +19,25 @@ export function HeroSection() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent rounded-full text-xs sm:text-sm font-medium">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-              Creative Web Solutions Since 2018
+              Licensed Electricians Since 2005
             </div>
 
             {/* Main headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-slate-950 leading-tight">
-              Stunning websites that
+              Expert electrical service for
               <br className="hidden sm:block" />
-              <span className="text-accent">convert visitors into customers</span>
+              <span className="text-accent">homes and businesses</span>
             </h1>
 
             {/* Subheadline */}
             <p className="max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg text-slate-600 leading-relaxed">
-              We design and build beautiful, high-performance websites that capture attention and drive real business results. From concept to launch, we're with you every step.
+              BrightSpark Electric keeps your property powered with safe wiring, fast repairs, and honest estimates. Count on licensed technicians for every job.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-4">
               <Link href="/contact" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white rounded-lg font-medium hover:bg-accent-dark transition-all duration-200 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
-                Start Your Project
+                Request Service
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/services" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border border-slate-300 text-slate-900 rounded-lg font-medium hover:bg-slate-50 transition-all duration-200 text-sm sm:text-base">
@@ -48,10 +48,10 @@ export function HeroSection() {
             {/* Social proof */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-8 pt-4 text-xs sm:text-sm text-slate-600">
               <div className="flex items-center gap-2">
-                <span>⭐ 4.9/5 from 50+ clients</span>
+                <span>⭐ 4.9/5 from 120+ customers</span>
               </div>
               <div className="hidden sm:block w-px h-4 bg-slate-300"></div>
-              <span>Trusted by brands like Nike, Airbnb, Tesla</span>
+              <span>Trusted by homeowners and local businesses</span>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export function HeroSection() {
             <Image
               priority
               src="/hero-lcp.svg"
-              alt="Modern website design preview on a laptop screen"
+              alt="Electrician working on wiring in a home"
               width={1200}
               height={720}
               className="w-full h-auto"

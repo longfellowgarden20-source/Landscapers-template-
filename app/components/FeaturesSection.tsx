@@ -1,37 +1,37 @@
 'use client'
 
-import { Palette, Zap, BarChart3, Shield, RefreshCw, Headphones } from 'lucide-react'
+import { Zap, Home, Plug, Shield, Clock, Headphones } from 'lucide-react'
 
 const services = [
   {
-    icon: Palette,
-    title: 'Web Design',
-    description: 'Beautiful, user-centered design that captures your brand essence and engages your audience.',
-  },
-  {
     icon: Zap,
-    title: 'Development',
-    description: 'Lightning-fast, mobile-optimized websites built with the latest technologies.',
+    title: 'Electrical Repairs',
+    description: 'Fast diagnosis and repair for lighting, outlets, breakers, and faulty wiring.',
   },
   {
-    icon: BarChart3,
-    title: 'Strategy & Analytics',
-    description: 'Data-driven insights to maximize conversions and ROI from your digital presence.',
+    icon: Home,
+    title: 'Residential Service',
+    description: 'Safe home wiring, panel upgrades, lighting installs, and smart home electrical projects.',
+  },
+  {
+    icon: Plug,
+    title: 'Commercial Electrical',
+    description: 'Reliable power systems, lighting upgrades, and maintenance for businesses of all sizes.',
   },
   {
     icon: Shield,
-    title: 'Security & Compliance',
-    description: 'Enterprise-grade security, GDPR compliance, and ongoing protection.',
+    title: 'Safety Inspections',
+    description: 'Code-compliant inspections, grounding checks, and surge protection recommendations.',
   },
   {
-    icon: RefreshCw,
-    title: 'Maintenance & Support',
-    description: 'Continuous monitoring, updates, and support to keep your site running smoothly.',
+    icon: Clock,
+    title: 'Emergency Response',
+    description: 'Same-day service and emergency repairs when electrical issues can’t wait.',
   },
   {
     icon: Headphones,
-    title: 'Training & Consulting',
-    description: 'Expert guidance to help you manage and grow your digital presence.',
+    title: 'Customer Support',
+    description: 'Clear estimates, reliable communication, and friendly follow-through from start to finish.',
   },
 ]
 
@@ -42,10 +42,10 @@ export function FeaturesSection() {
         {/* Section header */}
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-950">
-            Our Services
+            Electrical Services
           </h2>
           <p className="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
-            Complete web solutions from strategy through launch and beyond. We handle every aspect of your digital presence.
+            Professional electrical solutions for repairs, upgrades, safety inspections, and emergency service.
           </p>
         </div>
 

@@ -8,13 +8,13 @@ export default function AboutPage() {
       <Navigation />
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold mb-4">About Nexus</p>
+          <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold mb-4">About BrightSpark</p>
           <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-950 mb-6">
-            Digital product design and development for ambitious brands
+            Licensed electricians for homes, businesses, and emergency repairs
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
-            Nexus helps fast-growing companies launch modern, high-converting websites.
-            We combine strategic design, development, and analytics to turn traffic into loyal customers.
+            BrightSpark Electric delivers dependable electrical service with a focus on safety, quality, and fast response.
+            Our team is ready to solve wiring issues, upgrade panels, and keep your property powered reliably.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-accent text-white text-sm font-semibold hover:bg-accent-dark transition">
@@ -29,16 +29,16 @@ export default function AboutPage() {
         <div className="mt-16 grid gap-8 lg:grid-cols-3">
           {[
             {
-              title: 'Strategy first',
-              body: 'We start with research and user insights so every website is designed to move your business forward.',
+              title: 'Local expertise',
+              body: 'Trusted technicians who know local electrical codes and deliver dependable results every time.',
             },
             {
-              title: 'Built for growth',
-              body: 'Performance, accessibility, and conversions are baked into every project from day one.',
+              title: 'Quality workmanship',
+              body: 'We use quality materials, clean installations, and precise electrical work for every project.',
             },
             {
-              title: 'Long-term partner',
-              body: 'Ongoing support, analytics, and updates keep your website strong after launch.',
+              title: 'Customer care',
+              body: 'Friendly communication, clear estimates, and follow-through from first call to completion.',
             },
           ].map((item) => (
             <div key={item.title} className="rounded-3xl border border-slate-200 p-8 bg-slate-50">

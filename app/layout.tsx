@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Nexus Design - Award-Winning Web Agency',
-  description: 'We build beautiful, high-performance websites that drive results. Digital design & development for ambitious brands.',
+  title: 'BrightSpark Electric - Trusted Residential & Commercial Electricians',
+  description: 'Licensed electricians providing safe, fast, and reliable electrical service for homes and businesses.',
   icons: {
-    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✦</text></svg>',
+    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">⚡</text></svg>',
   },
 }
 

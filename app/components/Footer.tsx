@@ -14,12 +14,12 @@ export function Footer() {
           <div className="col-span-2 sm:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                ✦
+                ⚡
               </div>
-              <span className="font-display text-white font-bold">Nexus</span>
+              <span className="font-display text-white font-bold">BrightSpark</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-500">
-              Award-winning web design & development for ambitious brands.
+              Licensed electricians delivering safe, reliable service for homes and businesses.
             </p>
           </div>
 
@@ -62,7 +62,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8">
             {/* Copyright */}
             <p className="text-xs sm:text-sm text-slate-500 text-center sm:text-left">
-              © {currentYear} Velocity. All rights reserved.
+              © {currentYear} BrightSpark Electric. All rights reserved.
             </p>
 
             {/* Social Links */}
