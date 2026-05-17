@@ -54,14 +54,14 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 border-t border-slate-200">
+    <section id="pricing" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-950">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
             Our Packages
           </h2>
-          <p className="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
+          <p className="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg">
             Transparent pricing for electrical service packages. All estimates are clear, upfront, and tailored to your needs.
           </p>
         </div>
@@ -73,8 +73,8 @@ export function PricingSection() {
               key={index}
               className={`rounded-2xl transition-all duration-300 ${
                 plan.featured
-                  ? 'border-2 border-accent bg-white shadow-xl scale-100 md:scale-105'
-                  : 'border border-slate-200 bg-white hover:border-slate-300'
+                  ? 'border-2 border-accent bg-slate-800 shadow-xl scale-100 md:scale-105'
+                  : 'border-2 border-slate-700 bg-slate-800 hover:border-slate-600'
               }`}
             >
               {/* Featured badge */}
@@ -88,17 +88,17 @@ export function PricingSection() {
               <div className="p-6 sm:p-8 flex flex-col h-full">
                 {/* Plan name and description */}
                 <div className="mb-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-950 mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                     {plan.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-600">
+                  <p className="text-sm sm:text-base text-slate-300">
                     {plan.description}
                   </p>
                 </div>
 
                 {/* Price */}
                 <div className="mb-6">
-                  <div className="text-4xl sm:text-5xl font-bold text-slate-950">
+                  <div className="text-4xl sm:text-5xl font-bold text-white">
                     {plan.price === 'Custom' ? 'Custom' : `$${plan.price}`}
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export function PricingSection() {
                   {plan.features.map((feature, fIndex) => (
                     <div key={fIndex} className="flex items-start gap-3 sm:gap-4">
                       <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-slate-700">
+                      <span className="text-sm sm:text-base text-slate-400">
                         {feature}
                       </span>
                     </div>
