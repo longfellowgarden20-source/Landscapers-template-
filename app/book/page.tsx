@@ -78,18 +78,10 @@ export default function BookPage() {
     setLoadingSlots(true)
     try {
       const dateStr = formatDateValue(date)
-      const res = await fetch(
-        `${business.supabaseUrl}/rest/v1/appointments?select=time&date=eq.${dateStr}&status=neq.cancelled`,
-        {
-          headers: {
-            apikey: business.supabaseAnonKey,
-            Authorization: `Bearer ${business.supabaseAnonKey}`,
-          },
-        }
-      )
+      const res = await fetch(`/api/booked-slots?date=${dateStr}`)
       if (res.ok) {
-        const rows: { time: string }[] = await res.json()
-        setBookedTimes(rows.map((r) => r.time))
+        const data = await res.json()
+        setBookedTimes(data.times ?? [])
       }
     } finally {
       setLoadingSlots(false)
@@ -148,8 +140,8 @@ export default function BookPage() {
 
       if (!res.ok) {
         const body = await res.json().catch(() => ({}))
-        if (body?.code === '23505') {
-          setError('That time slot was just taken. Please go back and choose a different time.')
+        if (body?.code === '23505' || body?.message?.includes('unique')) {
+          setError('That time slot was just taken. Please go back and pick a different time.')
           await fetchBookedSlots(selectedDate!)
         } else {
           throw new Error('Booking failed')
