@@ -17,7 +17,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+          <div className="rounded-3xl border-2 border-blue-100 bg-blue-50 p-8 shadow-sm">
             <form className="space-y-6">
               <label className="block">
                 <span className="text-sm font-medium text-slate-800">Name</span>

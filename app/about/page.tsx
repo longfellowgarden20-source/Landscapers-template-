@@ -41,7 +41,7 @@ export default function AboutPage() {
               body: 'Friendly communication, clear estimates, and follow-through from first call to completion.',
             },
           ].map((item) => (
-            <div key={item.title} className="rounded-3xl border border-slate-200 p-8 bg-slate-50">
+            <div key={item.title} className="rounded-3xl border-2 border-blue-100 p-8 bg-white hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(96,165,250,0.2)] transition-all duration-300">
               <h2 className="text-xl font-semibold text-slate-950 mb-3">{item.title}</h2>
               <p className="text-slate-600 leading-relaxed">{item.body}</p>
             </div>

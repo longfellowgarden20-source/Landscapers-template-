@@ -37,14 +37,15 @@ const services = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-slate-800">
+    <section id="features" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white border-t border-blue-100">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
+          <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold">What We Do</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-950">
             Electrical Services
           </h2>
-          <p className="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg">
+          <p className="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
             Professional electrical solutions for repairs, upgrades, safety inspections, and emergency service.
           </p>
         </div>
@@ -56,20 +57,20 @@ export function FeaturesSection() {
             return (
               <div
                 key={index}
-                className="group p-6 sm:p-8 rounded-xl border-2 border-slate-700 hover:border-accent hover:shadow-lg transition-all duration-300 bg-slate-800 hover:bg-slate-700"
+                className="group p-6 sm:p-8 rounded-xl border-2 border-slate-200 hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(96,165,250,0.3)] transition-all duration-300 bg-white hover:bg-blue-50/30"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-blue-100 text-accent flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                   <Icon className="w-6 h-6" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                   {service.description}
                 </p>
               </div>
