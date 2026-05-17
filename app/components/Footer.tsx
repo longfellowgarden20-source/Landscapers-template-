@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react'
 
@@ -9,9 +7,9 @@ export function Footer() {
   return (
     <footer className="w-full bg-blue-700 text-blue-200 border-t border-blue-600">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {/* Brand */}
-          <div className="col-span-2 sm:col-span-1 space-y-4">
+          <div className="col-span-1 sm:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center font-bold text-sm">
                 ⚡

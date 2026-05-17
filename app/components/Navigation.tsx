@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const closeNav = () => setIsOpen(false)
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-slate-200 backdrop-blur-sm bg-white/95">
@@ -57,9 +58,12 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
             aria-label="Toggle menu"
+            aria-controls="mobile-menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? (
               <X className="w-5 h-5 text-slate-900" />
@@ -71,31 +75,31 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 border-t border-slate-200">
+          <div id="mobile-menu" className="md:hidden pb-4 border-t border-slate-200">
             <div className="flex flex-col gap-3 pt-4">
-              <Link href="/" className="block px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">
+              <Link href="/" onClick={closeNav} className="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors min-h-[44px]">
                 Home
               </Link>
-              <Link href="/about" className="block px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">
+              <Link href="/about" onClick={closeNav} className="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors min-h-[44px]">
                 About
               </Link>
-              <Link href="/services" className="block px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">
+              <Link href="/services" onClick={closeNav} className="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors min-h-[44px]">
                 Services
               </Link>
-              <Link href="/why-us" className="block px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">
+              <Link href="/why-us" onClick={closeNav} className="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors min-h-[44px]">
                 Why Us
               </Link>
-              <Link href="/pricing" className="block px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">
+              <Link href="/pricing" onClick={closeNav} className="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors min-h-[44px]">
                 Pricing
               </Link>
-              <Link href="/contact" className="block px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">
+              <Link href="/contact" onClick={closeNav} className="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors min-h-[44px]">
                 Contact
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t border-slate-200">
-                <Link href="/contact" className="w-full px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 rounded transition-colors font-medium">
+                <Link href="/contact" onClick={closeNav} className="w-full px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded transition-colors font-medium min-h-[44px]">
                   Request a Quote
                 </Link>
-                <Link href="/contact" className="w-full px-4 py-2.5 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium">
+                <Link href="/contact" onClick={closeNav} className="w-full px-4 py-3 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium min-h-[44px]">
                   Get Started
                 </Link>
               </div>

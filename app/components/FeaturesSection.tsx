@@ -1,5 +1,3 @@
-'use client'
-
 import { Zap, Home, Plug, Shield, Clock, Headphones } from 'lucide-react'
 
 const services = [

@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -62,6 +60,7 @@ export function HeroSection() {
               alt="Electrician working on wiring in a home"
               width={1200}
               height={720}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
               className="w-full h-auto"
             />
           </div>
