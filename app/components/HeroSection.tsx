@@ -17,7 +17,7 @@ export function HeroSection() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] items-center">
           <div className="text-center lg:text-left space-y-6 sm:space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 text-amber-300 rounded-full text-xs sm:text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 text-blue-300 rounded-full text-xs sm:text-sm font-medium">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
               Licensed Electricians Since 2005
             </div>
@@ -26,7 +26,7 @@ export function HeroSection() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-tight">
               Expert electrical service for
               <br className="hidden sm:block" />
-              <span className="text-amber-300">homes and businesses</span>
+              <span className="text-blue-300">homes and businesses</span>
             </h1>
 
             {/* Subheadline */}

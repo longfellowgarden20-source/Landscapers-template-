@@ -12,7 +12,7 @@ export default function Home() {
       <section className="py-20 bg-slate-900 border-t border-slate-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-sm uppercase tracking-[0.3em] text-amber-300 font-semibold mb-4">Explore BrightSpark</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-blue-300 font-semibold mb-4">Explore BrightSpark</p>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">
               Find the electrical service you need.
             </h2>
