@@ -10,8 +10,8 @@ export const business = {
   email: 'hello@greenedge.com',
 
   // --- Supabase (Settings → API in your Supabase project) ---
-  supabaseUrl: 'YOUR_SUPABASE_URL',
-  supabaseAnonKey: 'YOUR_SUPABASE_ANON_KEY',
+  supabaseUrl: 'https://gctajxnmxbeuerncdjch.supabase.co',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjdGFqeG5teGJldWVybmNkamNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNTk1ODgsImV4cCI6MjA5NDYzNTU4OH0.I6grLHJI_1BCdYmGYxA4pCIlzhzo3TCjS62DiBqqwcE',
 
   // --- Services shown in the booking form dropdown ---
   services: [
