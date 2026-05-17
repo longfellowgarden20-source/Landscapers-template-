@@ -5,7 +5,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="w-full bg-blue-700 text-blue-200 border-t border-blue-600">
+    <footer className="w-full bg-green-800 text-green-200 border-t border-green-700">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {/* Brand */}
@@ -16,7 +16,7 @@ export function Footer() {
               </div>
               <span className="font-display text-white font-bold">GreenEdge</span>
             </div>
-            <p className="text-xs sm:text-sm text-blue-200">
+            <p className="text-xs sm:text-sm text-green-200">
               Certified landscapers delivering beautiful, reliable service for homes and businesses.
             </p>
           </div>
@@ -56,25 +56,25 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-blue-600 pt-8 sm:pt-12">
+        <div className="border-t border-green-700 pt-8 sm:pt-12">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8">
             {/* Copyright */}
-            <p className="text-xs sm:text-sm text-blue-300 text-center sm:text-left">
+            <p className="text-xs sm:text-sm text-green-300 text-center sm:text-left">
               © {currentYear} GreenEdge Landscaping. All rights reserved.
             </p>
 
             {/* Social Links */}
             <div className="flex items-center gap-4 sm:gap-6">
-              <a href="#" className="text-blue-300 hover:text-white transition-colors p-2" aria-label="Twitter">
+              <a href="#" className="text-green-300 hover:text-white transition-colors p-2" aria-label="Twitter">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="text-blue-300 hover:text-white transition-colors p-2" aria-label="GitHub">
+              <a href="#" className="text-green-300 hover:text-white transition-colors p-2" aria-label="GitHub">
                 <Github className="w-4 h-4" />
               </a>
-              <a href="#" className="text-blue-300 hover:text-white transition-colors p-2" aria-label="LinkedIn">
+              <a href="#" className="text-green-300 hover:text-white transition-colors p-2" aria-label="LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="text-blue-300 hover:text-white transition-colors p-2" aria-label="Email">
+              <a href="#" className="text-green-300 hover:text-white transition-colors p-2" aria-label="Email">
                 <Mail className="w-4 h-4" />
               </a>
             </div>

@@ -20,8 +20,8 @@ module.exports = {
           '900': '#111827',
           '950': '#030712',
         },
-        'accent': '#60a5fa',
-        'accent-dark': '#1e40af',
+        'accent': '#3a7d44',
+        'accent-dark': '#1e4d2b',
       },
       fontFamily: {
         'display': ['Georgia', 'serif'],

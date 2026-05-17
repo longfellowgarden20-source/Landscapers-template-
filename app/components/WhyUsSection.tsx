@@ -34,7 +34,7 @@ export function WhyUsSection() {
               'From one-time cleanups to recurring maintenance plans, we show up on time and get the job done right.',
           },
         ].map((item) => (
-          <div key={item.title} className="rounded-3xl border-2 border-blue-100 p-8 shadow-sm bg-white hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(96,165,250,0.2)] transition-all duration-300">
+          <div key={item.title} className="rounded-3xl border-2 border-green-100 p-8 shadow-sm bg-white hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(58,125,68,0.2)] transition-all duration-300">
             <h2 className="text-2xl font-semibold text-slate-950 mb-3">{item.title}</h2>
             <p className="text-slate-600 leading-relaxed">{item.description}</p>
           </div>

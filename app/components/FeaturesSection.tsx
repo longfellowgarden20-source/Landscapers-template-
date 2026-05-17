@@ -35,7 +35,7 @@ const services = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white border-t border-blue-100">
+    <section id="features" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white border-t border-green-100">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
@@ -55,10 +55,10 @@ export function FeaturesSection() {
             return (
               <div
                 key={index}
-                className="group p-6 sm:p-8 rounded-xl border-2 border-slate-200 hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(96,165,250,0.3)] transition-all duration-300 bg-white hover:bg-blue-50/30"
+                className="group p-6 sm:p-8 rounded-xl border-2 border-slate-200 hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(58,125,68,0.3)] transition-all duration-300 bg-white hover:bg-green-50/30"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-lg bg-blue-100 text-accent flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 rounded-lg bg-green-100 text-accent flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                   <Icon className="w-6 h-6" />
                 </div>
 

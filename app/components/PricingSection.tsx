@@ -52,7 +52,7 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-blue-50 border-t border-blue-100">
+    <section id="pricing" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-green-50 border-t border-green-100">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
@@ -72,13 +72,13 @@ export function PricingSection() {
               key={index}
               className={`rounded-2xl transition-all duration-300 ${
                 plan.featured
-                  ? 'border-2 border-accent bg-blue-600 shadow-[0_8px_40px_-8px_rgba(96,165,250,0.5)] scale-100 md:scale-105'
-                  : 'border-2 border-blue-200 bg-white hover:border-accent hover:shadow-md'
+                  ? 'border-2 border-accent bg-green-700 shadow-[0_8px_40px_-8px_rgba(58,125,68,0.5)] scale-100 md:scale-105'
+                  : 'border-2 border-green-200 bg-white hover:border-accent hover:shadow-md'
               }`}
             >
               {/* Featured badge */}
               {plan.featured && (
-                <div className="px-4 sm:px-6 py-2 bg-blue-700 text-white text-xs sm:text-sm font-semibold text-center rounded-t-2xl">
+                <div className="px-4 sm:px-6 py-2 bg-green-800 text-white text-xs sm:text-sm font-semibold text-center rounded-t-2xl">
                   Most Popular
                 </div>
               )}
@@ -90,7 +90,7 @@ export function PricingSection() {
                   <h3 className={`text-xl sm:text-2xl font-bold mb-2 ${plan.featured ? 'text-white' : 'text-slate-900'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm sm:text-base ${plan.featured ? 'text-blue-100' : 'text-slate-600'}`}>
+                  <p className={`text-sm sm:text-base ${plan.featured ? 'text-green-100' : 'text-slate-600'}`}>
                     {plan.description}
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export function PricingSection() {
                 <button
                   className={`w-full py-3 sm:py-3.5 rounded-lg font-medium mb-8 transition-all duration-200 transform hover:scale-105 active:scale-95 text-sm sm:text-base ${
                     plan.featured
-                      ? 'bg-white text-blue-700 hover:bg-blue-50'
+                      ? 'bg-white text-green-900 hover:bg-green-50'
                       : 'bg-accent text-white hover:bg-accent-dark'
                   }`}
                 >
@@ -117,8 +117,8 @@ export function PricingSection() {
                 <div className="space-y-3 sm:space-y-4 flex-1">
                   {plan.features.map((feature, fIndex) => (
                     <div key={fIndex} className="flex items-start gap-3 sm:gap-4">
-                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.featured ? 'text-blue-200' : 'text-accent'}`} />
-                      <span className={`text-sm sm:text-base ${plan.featured ? 'text-blue-100' : 'text-slate-600'}`}>
+                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.featured ? 'text-green-200' : 'text-accent'}`} />
+                      <span className={`text-sm sm:text-base ${plan.featured ? 'text-green-100' : 'text-slate-600'}`}>
                         {feature}
                       </span>
                     </div>

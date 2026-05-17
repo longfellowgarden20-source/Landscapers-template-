@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 
 export function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-green-800 via-green-700 to-green-900">
       {/* Decorative background element */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/2 -right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
@@ -24,17 +24,17 @@ export function HeroSection() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-tight">
               Beautiful outdoor spaces for
               <br className="hidden sm:block" />
-              <span className="text-blue-100">homes and businesses</span>
+              <span className="text-green-100">homes and businesses</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg text-blue-50 leading-relaxed">
+            <p className="max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg text-green-50 leading-relaxed">
               GreenEdge Landscaping transforms your property with expert lawn care, garden design, and reliable maintenance. Count on certified professionals for every job.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-4">
-              <Link href="/contact" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-700 rounded-lg font-medium hover:bg-blue-50 transition-all duration-200 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
+              <Link href="/contact" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-green-900 rounded-lg font-medium hover:bg-green-50 transition-all duration-200 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
                 Request Service
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -44,7 +44,7 @@ export function HeroSection() {
             </div>
 
             {/* Social proof */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-8 pt-4 text-xs sm:text-sm text-blue-100">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-8 pt-4 text-xs sm:text-sm text-green-100">
               <div className="flex items-center gap-2">
                 <span>⭐ 4.9/5 from 200+ customers</span>
               </div>

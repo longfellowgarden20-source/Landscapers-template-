@@ -8,11 +8,11 @@ export function CTASection() {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white leading-tight">
           Ready to transform your outdoor space?
         </h2>
-        <p className="text-base sm:text-lg text-blue-100 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-green-100 max-w-2xl mx-auto">
           Reach out for professional landscaping service for your home or business.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2">
-          <Link href="/contact" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-accent rounded-lg font-medium hover:bg-blue-50 transition-all duration-200 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
+          <Link href="/contact" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-accent rounded-lg font-medium hover:bg-green-50 transition-all duration-200 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
             Request a Quote
             <ArrowRight className="w-4 h-4" />
           </Link>
