@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Navigation } from './components/Navigation'
 import { HeroSection } from './components/HeroSection'
+import { ServiceAreaSection } from './components/ServiceAreaSection'
 import { Footer } from './components/Footer'
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
         </div>
       </section>
 
+      <ServiceAreaSection />
       <Footer />
     </main>
   )
