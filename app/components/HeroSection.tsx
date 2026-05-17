@@ -8,10 +8,11 @@ export function HeroSection() {
       {/* Background image */}
       <Image
         priority
-        src="/hero-bg.png"
+        src="/hero-bg.webp"
         alt="Beautiful landscaped backyard at dusk"
         fill
         sizes="100vw"
+        quality={85}
         className="object-cover object-center"
       />
 
