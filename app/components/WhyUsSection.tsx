@@ -7,31 +7,31 @@ export function WhyUsSection() {
           Trusted landscapers who put quality first
         </h1>
         <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-          Our certified landscapers deliver beautiful results, honest pricing, and dependable service. Here’s what makes GreenEdge the right choice.
+          Our certified landscapers deliver beautiful results, honest pricing, and dependable service. Here's what makes GreenEdge the right choice.
         </p>
       </div>
 
       <div className="mt-16 grid gap-6 lg:grid-cols-2">
         {[
           {
-            title: ‘Certified landscapers’,
+            title: 'Certified landscapers',
             description:
-              ‘Our crew is fully certified, insured, and trained for residential and commercial landscaping projects of any size.’,
+              'Our crew is fully certified, insured, and trained for residential and commercial landscaping projects of any size.',
           },
           {
-            title: ‘Transparent pricing’,
+            title: 'Transparent pricing',
             description:
-              ‘You receive clear estimates, honest costs, and no surprise fees—just dependable landscaping service.’,
+              'You receive clear estimates, honest costs, and no surprise fees—just dependable landscaping service.',
           },
           {
-            title: ‘Quality-first craftsmanship’,
+            title: 'Quality-first craftsmanship',
             description:
-              ‘We use premium materials, proven techniques, and leave your property looking pristine after every visit.’,
+              'We use premium materials, proven techniques, and leave your property looking pristine after every visit.',
           },
           {
-            title: ‘Reliable scheduling’,
+            title: 'Reliable scheduling',
             description:
-              ‘From one-time cleanups to recurring maintenance plans, we show up on time and get the job done right.’,
+              'From one-time cleanups to recurring maintenance plans, we show up on time and get the job done right.',
           },
         ].map((item) => (
           <div key={item.title} className="rounded-3xl border-2 border-blue-100 p-8 shadow-sm bg-white hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(96,165,250,0.2)] transition-all duration-300">

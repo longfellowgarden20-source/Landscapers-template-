@@ -1,35 +1,35 @@
-import { Scissors, Home, Building2, Flower2, Trees, Headphones } from ‘lucide-react’
+import { Scissors, Home, Building2, Flower2, Trees, Headphones } from 'lucide-react'
 
 const services = [
   {
     icon: Scissors,
-    title: ‘Lawn Maintenance’,
-    description: ‘Regular mowing, edging, and trimming to keep your lawn looking neat and healthy year-round.’,
+    title: 'Lawn Maintenance',
+    description: 'Regular mowing, edging, and trimming to keep your lawn looking neat and healthy year-round.',
   },
   {
     icon: Home,
-    title: ‘Residential Landscaping’,
-    description: ‘Custom garden design, sod installation, planting beds, and full front and backyard transformations.’,
+    title: 'Residential Landscaping',
+    description: 'Custom garden design, sod installation, planting beds, and full front and backyard transformations.',
   },
   {
     icon: Building2,
-    title: ‘Commercial Landscaping’,
-    description: ‘Reliable grounds maintenance, seasonal clean-ups, and landscape upkeep for businesses of all sizes.’,
+    title: 'Commercial Landscaping',
+    description: 'Reliable grounds maintenance, seasonal clean-ups, and landscape upkeep for businesses of all sizes.',
   },
   {
     icon: Flower2,
-    title: ‘Garden Design’,
-    description: ‘Professional planting plans, flower beds, mulching, and seasonal color rotations.’,
+    title: 'Garden Design',
+    description: 'Professional planting plans, flower beds, mulching, and seasonal color rotations.',
   },
   {
     icon: Trees,
-    title: ‘Tree & Shrub Care’,
-    description: ‘Pruning, shaping, removal, and stump grinding to keep your trees and shrubs healthy and safe.’,
+    title: 'Tree & Shrub Care',
+    description: 'Pruning, shaping, removal, and stump grinding to keep your trees and shrubs healthy and safe.',
   },
   {
     icon: Headphones,
-    title: ‘Customer Support’,
-    description: ‘Clear estimates, reliable communication, and friendly follow-through from first call to final cleanup.’,
+    title: 'Customer Support',
+    description: 'Clear estimates, reliable communication, and friendly follow-through from first call to final cleanup.',
   },
 ]
 
