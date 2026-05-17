@@ -15,16 +15,16 @@ export default function ContactPage() {
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
               Call or message us for repairs, upgrades, inspections, or emergency electrical service. Our licensed electricians will respond quickly.
             </p>
+
+            <div className="mt-8 rounded-2xl border-2 border-blue-100 bg-blue-50 p-6">
+              <p className="text-base font-semibold text-slate-900">Prefer to call? We're here to help.</p>
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                Call us directly at <a href="tel:+15551234567" className="text-accent font-medium hover:underline">(555) 123-4567</a> or email <a href="mailto:hello@example.com" className="text-accent font-medium hover:underline">hello@example.com</a>. If we don't pick up, please fill out the form and we'll respond as soon as possible.
+              </p>
+            </div>
           </div>
 
           <div className="rounded-3xl border-2 border-blue-100 bg-blue-50 p-8 shadow-sm">
-            <div className="rounded-2xl border border-slate-200 bg-white/80 p-6 mb-6">
-              <p className="text-base text-slate-900 font-semibold">Prefer to call? We're here to help.</p>
-              <p className="mt-2 text-sm text-slate-600">
-                Call us directly at <a href="tel:+15551234567" className="text-accent hover:underline">(555) 123-4567</a> or email <a href="mailto:hello@example.com" className="text-accent hover:underline">hello@example.com</a>.
-                If we don’t pick up, please fill out the form and we’ll respond as soon as possible.
-              </p>
-            </div>
             <form className="space-y-6">
               <label className="block">
                 <span className="text-sm font-medium text-slate-800">Name</span>
