@@ -5,7 +5,7 @@ import { business } from '../../config/business'
 import {
   LogOut, RefreshCw, CheckCircle2, XCircle, Trash2,
   CalendarDays, Clock, User, Mail, Phone, Briefcase,
-  ChevronDown, Search,
+  ChevronDown, Search, Ban,
 } from 'lucide-react'
 
 // ── types ─────────────────────────────────────────────────────
@@ -104,11 +104,52 @@ function PasswordGate({ onAuth }: { onAuth: () => void }) {
 
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false)
+  const [activeTab, setActiveTab] = useState<'appointments' | 'blocked'>('appointments')
   const [appointments, setAppointments] = useState<Appointment[]>([])
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
   const [filterStatus, setFilterStatus] = useState<Status | 'all'>('all')
   const [expandedId, setExpandedId] = useState<string | null>(null)
+
+  // blocked dates state
+  const [blockedDates, setBlockedDates] = useState<string[]>([])
+  const [blockInput, setBlockInput] = useState('')
+  const [blockReason, setBlockReason] = useState('')
+  const [blockLoading, setBlockLoading] = useState(false)
+  const [blockError, setBlockError] = useState('')
+
+  const fetchBlockedDates = useCallback(async () => {
+    const res = await fetch('/api/blocked-dates')
+    if (res.ok) {
+      const data = await res.json()
+      setBlockedDates(data.dates ?? [])
+    }
+  }, [])
+
+  async function addBlockedDate() {
+    if (!blockInput) return
+    setBlockLoading(true)
+    setBlockError('')
+    const res = await fetch('/api/blocked-dates', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: blockInput, reason: blockReason }),
+    })
+    if (res.ok) {
+      setBlockInput('')
+      setBlockReason('')
+      await fetchBlockedDates()
+    } else {
+      const data = await res.json().catch(() => ({}))
+      setBlockError(data.error === 'already_blocked' ? 'That date is already blocked.' : 'Failed to block date.')
+    }
+    setBlockLoading(false)
+  }
+
+  async function removeBlockedDate(date: string) {
+    await fetch(`/api/blocked-dates?date=${date}`, { method: 'DELETE' })
+    setBlockedDates((prev) => prev.filter((d) => d !== date))
+  }
 
   const fetchAppointments = useCallback(async () => {
     setLoading(true)
@@ -127,8 +168,11 @@ export default function AdminPage() {
   }, [])
 
   useEffect(() => {
-    if (authed) fetchAppointments()
-  }, [authed, fetchAppointments])
+    if (authed) {
+      fetchAppointments()
+      fetchBlockedDates()
+    }
+  }, [authed, fetchAppointments, fetchBlockedDates])
 
   async function updateStatus(id: string, status: Status) {
     await fetch(`${business.supabaseUrl}/rest/v1/appointments?id=eq.${id}`, {
@@ -204,8 +248,94 @@ export default function AdminPage() {
         </div>
       </header>
 
+      {/* Tabs */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <div className="flex gap-1 bg-slate-100 rounded-2xl p-1 w-fit">
+          <button
+            onClick={() => setActiveTab('appointments')}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${activeTab === 'appointments' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            <CalendarDays className="w-4 h-4" />
+            Appointments
+          </button>
+          <button
+            onClick={() => setActiveTab('blocked')}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${activeTab === 'blocked' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            <Ban className="w-4 h-4" />
+            Block Dates
+            {blockedDates.length > 0 && (
+              <span className="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full">{blockedDates.length}</span>
+            )}
+          </button>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
+        {/* ── Blocked Dates Tab ── */}
+        {activeTab === 'blocked' && (
+          <div className="max-w-xl">
+            <p className="text-sm text-slate-500 mb-6">
+              Blocked dates are hidden from the customer booking calendar. Use this for holidays, vacations, or days you are unavailable.
+            </p>
+
+            {/* Add date form */}
+            <div className="bg-white rounded-2xl border-2 border-slate-100 p-6 mb-6">
+              <h3 className="font-semibold text-slate-900 mb-4">Block a date</h3>
+              <div className="space-y-3">
+                <input
+                  type="date"
+                  value={blockInput}
+                  onChange={(e) => setBlockInput(e.target.value)}
+                  className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                />
+                <input
+                  type="text"
+                  placeholder="Reason (optional) — e.g. Holiday"
+                  value={blockReason}
+                  onChange={(e) => setBlockReason(e.target.value)}
+                  className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                />
+                {blockError && <p className="text-sm text-red-600">{blockError}</p>}
+                <button
+                  onClick={addBlockedDate}
+                  disabled={!blockInput || blockLoading}
+                  className="w-full py-3 rounded-2xl bg-accent text-white font-semibold hover:bg-accent-dark transition disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  {blockLoading ? 'Blocking...' : 'Block Date'}
+                </button>
+              </div>
+            </div>
+
+            {/* Blocked dates list */}
+            {blockedDates.length === 0 ? (
+              <div className="text-center py-12 text-slate-400">
+                <Ban className="w-8 h-8 mx-auto mb-3 opacity-40" />
+                <p className="text-sm">No dates blocked yet.</p>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {blockedDates.map((date) => (
+                  <div key={date} className="flex items-center justify-between bg-white rounded-2xl border-2 border-slate-100 px-5 py-4">
+                    <span className="text-sm font-medium text-slate-900">
+                      {new Date(date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
+                    </span>
+                    <button
+                      onClick={() => removeBlockedDate(date)}
+                      className="p-2 rounded-xl text-red-500 hover:bg-red-50 transition"
+                      title="Unblock"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'appointments' && <>
         {/* Stats row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
           {([['all', 'Total', 'bg-white'], ['pending', 'Pending', 'bg-yellow-50'], ['confirmed', 'Confirmed', 'bg-green-50'], ['cancelled', 'Cancelled', 'bg-red-50']] as const).map(([key, label, bg]) => (
@@ -366,6 +496,7 @@ export default function AdminPage() {
             ))}
           </div>
         )}
+        </>}
       </div>
     </div>
   )

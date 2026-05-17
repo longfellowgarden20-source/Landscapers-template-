@@ -74,6 +74,9 @@ export default function BookPage() {
   const [bookedTimes, setBookedTimes] = useState<string[]>([])
   const [loadingSlots, setLoadingSlots] = useState(false)
 
+  // blocked dates (hidden from calendar)
+  const [blockedDates, setBlockedDates] = useState<string[]>([])
+
   const fetchBookedSlots = useCallback(async (date: Date) => {
     setLoadingSlots(true)
     try {
@@ -89,6 +92,13 @@ export default function BookPage() {
   }, [])
 
   useEffect(() => {
+    fetch('/api/blocked-dates')
+      .then((r) => r.json())
+      .then((data) => setBlockedDates(data.dates ?? []))
+      .catch(() => {})
+  }, [])
+
+  useEffect(() => {
     if (selectedDate) fetchBookedSlots(selectedDate)
     else setBookedTimes([])
   }, [selectedDate, fetchBookedSlots])
@@ -98,16 +108,18 @@ export default function BookPage() {
     []
   )
 
-  // group dates by month for display
+  // group dates by month, excluding blocked ones
   const datesByMonth = useMemo(() => {
     const map: Record<string, Date[]> = {}
-    availableDates.forEach((d) => {
-      const key = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
-      if (!map[key]) map[key] = []
-      map[key].push(d)
-    })
+    availableDates
+      .filter((d) => !blockedDates.includes(formatDateValue(d)))
+      .forEach((d) => {
+        const key = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+        if (!map[key]) map[key] = []
+        map[key].push(d)
+      })
     return map
-  }, [availableDates])
+  }, [availableDates, blockedDates])
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
