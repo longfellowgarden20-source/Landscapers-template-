@@ -41,7 +41,7 @@ export function ServiceAreaSection() {
               Proudly serving<br />Long Beach & surrounding cities
             </h2>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
-              BrightSpark Electric is based in Long Beach, CA. Our licensed electricians serve homes and businesses across the city and neighboring communities — fast response times, no long drives, and deep familiarity with local electrical codes.
+              GreenEdge Landscaping is based in Long Beach, CA. Our certified landscapers serve homes and businesses across the city and neighboring communities — fast response times, no long drives, and deep familiarity with local soil and climate conditions.
             </p>
 
             <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6 mb-6">

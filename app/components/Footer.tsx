@@ -12,12 +12,12 @@ export function Footer() {
           <div className="col-span-1 sm:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center font-bold text-sm">
-                ⚡
+                🌿
               </div>
-              <span className="font-display text-white font-bold">BrightSpark</span>
+              <span className="font-display text-white font-bold">GreenEdge</span>
             </div>
             <p className="text-xs sm:text-sm text-blue-200">
-              Licensed electricians delivering safe, reliable service for homes and businesses.
+              Certified landscapers delivering beautiful, reliable service for homes and businesses.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8">
             {/* Copyright */}
             <p className="text-xs sm:text-sm text-blue-300 text-center sm:text-left">
-              © {currentYear} BrightSpark Electric. All rights reserved.
+              © {currentYear} GreenEdge Landscaping. All rights reserved.
             </p>
 
             {/* Social Links */}

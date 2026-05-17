@@ -8,13 +8,13 @@ export default function AboutPage() {
       <Navigation />
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold mb-4">About BrightSpark</p>
+          <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold mb-4">About GreenEdge</p>
           <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-950 mb-6">
-            Licensed electricians for homes, businesses, and emergency repairs
+            Professional landscapers for homes, businesses, and outdoor transformations
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
-            BrightSpark Electric delivers dependable electrical service with a focus on safety, quality, and fast response.
-            Our team is ready to solve wiring issues, upgrade panels, and keep your property powered reliably.
+            GreenEdge Landscaping delivers dependable outdoor services with a focus on quality, craftsmanship, and lasting results.
+            Our team is ready to design, install, and maintain landscapes that make your property stand out.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-accent text-white text-sm font-semibold hover:bg-accent-dark transition">
@@ -30,15 +30,15 @@ export default function AboutPage() {
           {[
             {
               title: 'Local expertise',
-              body: 'Trusted technicians who know local electrical codes and deliver dependable results every time.',
+              body: 'Trusted landscapers who know local soil, climate, and plant life — delivering beautiful results every time.',
             },
             {
               title: 'Quality workmanship',
-              body: 'We use quality materials, clean installations, and precise electrical work for every project.',
+              body: 'We use quality materials, proven planting methods, and precise detailing for every landscaping project.',
             },
             {
               title: 'Customer care',
-              body: 'Friendly communication, clear estimates, and follow-through from first call to completion.',
+              body: 'Friendly communication, clear estimates, and follow-through from first consultation to final cleanup.',
             },
           ].map((item) => (
             <div key={item.title} className="rounded-3xl border-2 border-blue-100 p-8 bg-white hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(96,165,250,0.2)] transition-all duration-300">

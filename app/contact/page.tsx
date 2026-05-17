@@ -8,12 +8,12 @@ export default function ContactPage() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-start">
           <div>
-            <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold mb-4">Contact BrightSpark</p>
+            <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold mb-4">Contact GreenEdge</p>
             <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-950 mb-6">
-              Need an electrician? Get fast help today
+              Ready for a beautiful yard? Get a free quote today
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-              Call or message us for repairs, upgrades, inspections, or emergency electrical service. Our licensed electricians will respond quickly.
+              Call or message us for lawn care, garden design, clean-ups, or ongoing maintenance. Our certified landscapers will respond quickly.
             </p>
 
             <div className="mt-8 rounded-2xl border-2 border-blue-100 bg-blue-50 p-6">
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 <span className="text-sm font-medium text-slate-800">Message</span>
                 <textarea
                   rows={6}
-                  placeholder="Describe your electrical issue or project"
+                  placeholder="Describe your landscaping project or service needed"
                   required
                   className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
                 />

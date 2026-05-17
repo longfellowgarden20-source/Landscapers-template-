@@ -1,35 +1,35 @@
-import { Zap, Home, Plug, Shield, Clock, Headphones } from 'lucide-react'
+import { Scissors, Home, Building2, Flower2, Trees, Headphones } from ‘lucide-react’
 
 const services = [
   {
-    icon: Zap,
-    title: 'Electrical Repairs',
-    description: 'Fast diagnosis and repair for lighting, outlets, breakers, and faulty wiring.',
+    icon: Scissors,
+    title: ‘Lawn Maintenance’,
+    description: ‘Regular mowing, edging, and trimming to keep your lawn looking neat and healthy year-round.’,
   },
   {
     icon: Home,
-    title: 'Residential Service',
-    description: 'Safe home wiring, panel upgrades, lighting installs, and smart home electrical projects.',
+    title: ‘Residential Landscaping’,
+    description: ‘Custom garden design, sod installation, planting beds, and full front and backyard transformations.’,
   },
   {
-    icon: Plug,
-    title: 'Commercial Electrical',
-    description: 'Reliable power systems, lighting upgrades, and maintenance for businesses of all sizes.',
+    icon: Building2,
+    title: ‘Commercial Landscaping’,
+    description: ‘Reliable grounds maintenance, seasonal clean-ups, and landscape upkeep for businesses of all sizes.’,
   },
   {
-    icon: Shield,
-    title: 'Safety Inspections',
-    description: 'Code-compliant inspections, grounding checks, and surge protection recommendations.',
+    icon: Flower2,
+    title: ‘Garden Design’,
+    description: ‘Professional planting plans, flower beds, mulching, and seasonal color rotations.’,
   },
   {
-    icon: Clock,
-    title: 'Emergency Response',
-    description: 'Same-day service and emergency repairs when electrical issues can’t wait.',
+    icon: Trees,
+    title: ‘Tree & Shrub Care’,
+    description: ‘Pruning, shaping, removal, and stump grinding to keep your trees and shrubs healthy and safe.’,
   },
   {
     icon: Headphones,
-    title: 'Customer Support',
-    description: 'Clear estimates, reliable communication, and friendly follow-through from start to finish.',
+    title: ‘Customer Support’,
+    description: ‘Clear estimates, reliable communication, and friendly follow-through from first call to final cleanup.’,
   },
 ]
 
@@ -41,10 +41,10 @@ export function FeaturesSection() {
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
           <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold">What We Do</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-950">
-            Electrical Services
+            Landscaping Services
           </h2>
           <p className="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
-            Professional electrical solutions for repairs, upgrades, safety inspections, and emergency service.
+            Professional landscaping solutions for lawn care, garden design, tree service, and commercial grounds maintenance.
           </p>
         </div>
 

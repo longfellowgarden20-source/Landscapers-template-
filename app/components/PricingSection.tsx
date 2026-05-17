@@ -2,46 +2,46 @@ import { Check } from 'lucide-react'
 
 const plans = [
   {
-    name: 'Safety Inspection',
-    price: '149',
-    description: 'Identify hazards, code issues, and get clear repair recommendations.',
+    name: 'Lawn Care Visit',
+    price: '89',
+    description: 'One-time lawn maintenance for a clean, manicured look.',
     features: [
-      'Comprehensive home inspection',
-      'Breaker panel review',
-      'Outlet & switch testing',
-      'Grounding verification',
-      'Surge protection advice',
-      'Written safety report',
-      'No-obligation estimate',
+      'Mowing & edging',
+      'Trimming along borders',
+      'Blowing of clippings',
+      'Weed control check',
+      'Debris cleanup',
+      'Property walkthrough',
+      'No-obligation follow-up estimate',
     ],
-    cta: 'Book Inspection',
+    cta: 'Book a Visit',
     featured: false,
   },
   {
-    name: 'Electrical Upgrade',
-    price: '1,250',
-    description: 'Ideal for kitchen remodels, panel upgrades, EV chargers, and modern lighting.',
+    name: 'Full Landscape Design',
+    price: '1,500',
+    description: 'Ideal for new installs, full yard makeovers, and garden transformations.',
     features: [
-      'Panel and circuit upgrades',
-      'New outlet and lighting installs',
-      'EV charger wiring',
-      'Smart home ready upgrades',
-      'Permitting assistance',
-      '1 year workmanship warranty',
+      'Custom design consultation',
+      'Sod or seed installation',
+      'Planting beds & flowers',
+      'Mulch & edging',
+      'Irrigation check & setup',
+      '1 year plant guarantee',
     ],
-    cta: 'Get Estimate',
+    cta: 'Get a Quote',
     featured: true,
   },
   {
-    name: 'Commercial Maintenance',
+    name: 'Maintenance Plan',
     price: 'Custom',
-    description: 'Planned service and emergency support for businesses of any size.',
+    description: 'Ongoing care and seasonal service for residential or commercial properties.',
     features: [
-      'Preventive maintenance',
-      'Lighting and power audits',
-      'Emergency response',
-      'Equipment replacement',
-      'Safety compliance checks',
+      'Recurring lawn maintenance',
+      'Seasonal clean-ups',
+      'Fertilization & weed control',
+      'Shrub & tree trimming',
+      'Leaf removal',
       'Priority scheduling',
       'Service agreements',
     ],
@@ -61,7 +61,7 @@ export function PricingSection() {
             Our Packages
           </h2>
           <p className="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
-            Transparent pricing for electrical service packages. All estimates are clear, upfront, and tailored to your needs.
+            Transparent pricing for landscaping packages. All estimates are clear, upfront, and tailored to your property.
           </p>
         </div>
 
@@ -132,7 +132,7 @@ export function PricingSection() {
         {/* Footer note */}
         <div className="text-center mt-12 sm:mt-16">
           <p className="text-slate-600 text-sm sm:text-base">
-            Not sure which service is right? <span className="font-semibold">Contact us for a free consultation and custom electrician estimate.</span>
+            Not sure which service is right? <span className="font-semibold">Contact us for a free consultation and custom landscaping estimate.</span>
           </p>
         </div>
       </div>
