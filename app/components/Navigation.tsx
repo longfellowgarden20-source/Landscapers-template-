@@ -88,18 +88,18 @@ export function Navigation() {
                   {label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 pt-3 mt-1 border-t border-slate-200">
+              <div className="flex flex-col gap-2 pt-3 mt-1 border-t border-slate-200 px-2">
                 <Link
                   href="/contact"
                   onClick={closeNav}
-                  className="w-full px-4 py-3 text-sm text-center text-slate-700 hover:bg-slate-50 rounded-lg transition-colors font-medium"
+                  className="w-full px-4 py-4 text-sm text-center text-slate-700 hover:bg-slate-50 rounded-xl transition-colors font-medium"
                 >
                   Request a Quote
                 </Link>
                 <Link
                   href="/book"
                   onClick={closeNav}
-                  className="w-full px-4 py-3 text-sm text-center bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium"
+                  className="w-full px-4 py-4 text-base text-center bg-accent text-white rounded-xl hover:bg-accent-dark transition-colors font-semibold"
                 >
                   Book Appointment
                 </Link>
