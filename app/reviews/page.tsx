@@ -44,7 +44,7 @@ export default function ReviewsPage() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
-  const [form, setForm] = useState({ name: '', rating: 0, comment: '' })
+  const [form, setForm] = useState({ name: '', email: '', rating: 0, comment: '' })
 
   useEffect(() => {
     fetch('/api/reviews')
@@ -115,17 +115,30 @@ export default function ReviewsPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl border-2 border-green-100 p-8 space-y-5">
-              <label className="block">
-                <span className="text-sm font-medium text-slate-800">Your Name</span>
-                <input
-                  type="text"
-                  required
-                  placeholder="Jane Doe"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-                />
-              </label>
+              <div className="grid sm:grid-cols-2 gap-5">
+                <label className="block">
+                  <span className="text-sm font-medium text-slate-800">Your Name</span>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Jane Doe"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  />
+                </label>
+                <label className="block">
+                  <span className="text-sm font-medium text-slate-800">Email <span className="text-slate-400 font-normal">(not shown publicly)</span></span>
+                  <input
+                    type="email"
+                    required
+                    placeholder="jane@example.com"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  />
+                </label>
+              </div>
 
               <div>
                 <span className="text-sm font-medium text-slate-800 block mb-2">Rating</span>

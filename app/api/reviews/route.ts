@@ -13,10 +13,10 @@ const anonHeaders = {
   'Content-Type': 'application/json',
 }
 
-// Public: get all approved reviews
+// Public: get all approved reviews — email is never included
 export async function GET() {
   const res = await fetch(
-    `${business.supabaseUrl}/rest/v1/reviews?select=*&approved=eq.true&order=created_at.desc`,
+    `${business.supabaseUrl}/rest/v1/reviews?select=id,name,rating,comment,created_at&approved=eq.true&order=created_at.desc`,
     { headers: anonHeaders, cache: 'no-store' }
   )
   if (!res.ok) return NextResponse.json({ error: 'fetch failed' }, { status: 500 })
@@ -26,14 +26,14 @@ export async function GET() {
 
 // Public: submit a new review (unapproved by default)
 export async function POST(req: NextRequest) {
-  const { name, rating, comment } = await req.json()
-  if (!name || !rating || !comment) {
+  const { name, email, rating, comment } = await req.json()
+  if (!name || !email || !rating || !comment) {
     return NextResponse.json({ error: 'missing fields' }, { status: 400 })
   }
   const res = await fetch(`${business.supabaseUrl}/rest/v1/reviews`, {
     method: 'POST',
     headers: { ...anonHeaders, Prefer: 'return=minimal' },
-    body: JSON.stringify({ name, rating, comment }),
+    body: JSON.stringify({ name, email, rating, comment }),
   })
   if (!res.ok) return NextResponse.json({ error: 'insert failed' }, { status: 500 })
   return NextResponse.json({ ok: true })

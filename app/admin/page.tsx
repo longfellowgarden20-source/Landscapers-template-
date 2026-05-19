@@ -16,6 +16,7 @@ type AdminTab = 'appointments' | 'blocked' | 'reviews'
 interface Review {
   id: string
   name: string
+  email: string
   rating: number
   comment: string
   approved: boolean
@@ -424,9 +425,10 @@ export default function AdminPage() {
                           </div>
                         </div>
                         <p className="text-sm text-slate-600 leading-relaxed mb-2">&ldquo;{r.comment}&rdquo;</p>
-                        <p className="text-xs text-slate-400">
-                          {new Date(r.created_at).toLocaleString()}
-                        </p>
+                        <div className="flex flex-wrap gap-3 text-xs text-slate-400">
+                          <span className="flex items-center gap-1"><Mail className="w-3 h-3" />{r.email}</span>
+                          <span>{new Date(r.created_at).toLocaleString()}</span>
+                        </div>
                       </div>
                       <div className="flex items-center gap-2 flex-shrink-0">
                         {r.approved ? (
