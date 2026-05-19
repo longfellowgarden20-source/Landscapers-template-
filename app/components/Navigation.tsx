@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const links = [
@@ -19,95 +19,107 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const closeNav = () => setIsOpen(false)
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [isOpen])
+
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <>
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
 
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 flex items-center gap-2">
-            <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center text-white font-bold text-base">
-              🌿
+            {/* Logo */}
+            <Link href="/" onClick={closeNav} className="flex-shrink-0 flex items-center gap-2">
+              <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center text-white font-bold text-base">
+                🌿
+              </div>
+              <span className="font-display text-lg font-bold text-slate-900">
+                GreenEdge
+              </span>
+            </Link>
+
+            {/* Desktop nav */}
+            <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+              {links.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="text-sm text-slate-600 hover:text-slate-900 transition-colors whitespace-nowrap"
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
-            <span className="font-display text-lg font-bold text-slate-900">
-              GreenEdge
-            </span>
-          </Link>
 
-          {/* Desktop nav — only visible on large screens */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex items-center">
+              <Link
+                href="/book"
+                className="px-4 py-2.5 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium whitespace-nowrap"
+              >
+                Book Appointment
+              </Link>
+            </div>
+
+            {/* Hamburger */}
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              {isOpen
+                ? <X className="w-6 h-6 text-slate-900" />
+                : <Menu className="w-6 h-6 text-slate-900" />
+              }
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Full-screen mobile overlay */}
+      {isOpen && (
+        <div
+          className="lg:hidden fixed inset-0 z-40 bg-white flex flex-col"
+          style={{ top: '64px' }} // height of the nav bar
+        >
+          {/* Scrollable link list */}
+          <div className="flex-1 overflow-y-auto px-4 py-4">
             {links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className="text-sm text-slate-600 hover:text-slate-900 transition-colors whitespace-nowrap"
+                onClick={closeNav}
+                className="flex items-center px-4 py-4 text-base font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-colors border-b border-slate-100 last:border-0"
               >
                 {label}
               </Link>
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-2">
+          {/* Sticky CTAs pinned to bottom */}
+          <div className="flex-shrink-0 px-4 py-4 border-t border-slate-200 bg-white flex flex-col gap-3">
+            <Link
+              href="/contact"
+              onClick={closeNav}
+              className="w-full py-4 text-base text-center font-semibold text-slate-700 border-2 border-slate-200 rounded-2xl hover:bg-slate-50 transition-colors"
+            >
+              Request a Quote
+            </Link>
             <Link
               href="/book"
-              className="px-4 py-2.5 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium whitespace-nowrap"
+              onClick={closeNav}
+              className="w-full py-4 text-base text-center font-semibold text-white bg-accent rounded-2xl hover:bg-accent-dark transition-colors"
             >
               Book Appointment
             </Link>
           </div>
-
-          {/* Hamburger — visible below lg */}
-          <button
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
-            aria-label="Toggle menu"
-            aria-controls="mobile-menu"
-            aria-expanded={isOpen}
-          >
-            {isOpen ? (
-              <X className="w-5 h-5 text-slate-900" />
-            ) : (
-              <Menu className="w-5 h-5 text-slate-900" />
-            )}
-          </button>
         </div>
-
-        {/* Mobile / tablet dropdown */}
-        {isOpen && (
-          <div id="mobile-menu" className="lg:hidden pb-4 border-t border-slate-200">
-            <div className="flex flex-col pt-2">
-              {links.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={closeNav}
-                  className="px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
-                >
-                  {label}
-                </Link>
-              ))}
-              <div className="flex flex-col gap-2 pt-3 mt-1 border-t border-slate-200 px-2">
-                <Link
-                  href="/contact"
-                  onClick={closeNav}
-                  className="w-full px-4 py-4 text-sm text-center text-slate-700 hover:bg-slate-50 rounded-xl transition-colors font-medium"
-                >
-                  Request a Quote
-                </Link>
-                <Link
-                  href="/book"
-                  onClick={closeNav}
-                  className="w-full px-4 py-4 text-base text-center bg-accent text-white rounded-xl hover:bg-accent-dark transition-colors font-semibold"
-                >
-                  Book Appointment
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      )}
+    </>
   )
 }
