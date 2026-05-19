@@ -102,18 +102,18 @@ export function Navigation() {
           </div>
 
           {/* Sticky CTAs pinned to bottom */}
-          <div className="flex-shrink-0 px-4 py-4 border-t border-slate-200 bg-white flex flex-col gap-3">
+          <div className="flex-shrink-0 px-4 py-3 border-t border-slate-200 bg-white flex flex-col gap-2">
             <Link
               href="/contact"
               onClick={closeNav}
-              className="w-full py-4 text-base text-center font-semibold text-slate-700 border-2 border-slate-200 rounded-2xl hover:bg-slate-50 transition-colors"
+              className="w-full py-3 text-sm text-center font-semibold text-slate-700 border-2 border-slate-200 rounded-xl hover:bg-slate-50 transition-colors"
             >
               Request a Quote
             </Link>
             <Link
               href="/book"
               onClick={closeNav}
-              className="w-full py-4 text-base text-center font-semibold text-white bg-accent rounded-2xl hover:bg-accent-dark transition-colors"
+              className="w-full py-3 text-sm text-center font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors"
             >
               Book Appointment
             </Link>
