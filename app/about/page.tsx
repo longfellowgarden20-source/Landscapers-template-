@@ -30,7 +30,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-[0_20px_60px_-15px_rgba(58,125,68,0.3)] relative">
                 <Image
-                  src="/owner.png"
+                  src="/owner.webp"
                   alt="Hector Diaz, Owner of GreenEdge Landscaping"
                   fill
                   className="object-cover object-top"
