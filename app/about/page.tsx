@@ -30,7 +30,7 @@ export default function AboutPage() {
               <div className="rounded-3xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-[0_20px_60px_-15px_rgba(58,125,68,0.3)]">
                 <img
                   src="/owner.png"
-                  alt="Owner of GreenEdge Landscaping"
+                  alt="Hector Diaz, Owner of GreenEdge Landscaping"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -44,19 +44,20 @@ export default function AboutPage() {
             {/* Content */}
             <div className="pt-6 lg:pt-0">
               <p className="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-3">Meet the Owner</p>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-950 mb-6 leading-tight">
-                A lifelong passion for the outdoors
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-950 mb-1 leading-tight">
+                Hector Diaz
               </h2>
+              <p className="text-base text-accent font-medium mb-6">Founder & Owner, GreenEdge Landscaping</p>
 
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  What started as a summer job cutting neighbors' lawns turned into a lifelong career built on genuine love for the craft. With over 20 years of hands-on experience in residential and commercial landscaping, he has seen — and handled — just about every challenge a property can throw at you.
+                  What started as a summer job cutting neighbors' lawns turned into a lifelong career built on genuine love for the craft. With over 20 years of hands-on experience in residential and commercial landscaping, Hector has seen — and handled — just about every challenge a property can throw at you.
                 </p>
                 <p>
-                  He founded GreenEdge with a simple belief: that every customer deserves the same care and attention he would give his own home. That means showing up on time, communicating clearly, and never cutting corners — no matter the size of the job.
+                  Hector founded GreenEdge with a simple belief: that every customer deserves the same care and attention he would give his own home. That means showing up on time, communicating clearly, and never cutting corners — no matter the size of the job.
                 </p>
                 <p>
-                  From full backyard redesigns to weekly maintenance programs, he personally oversees every project to make sure the quality meets the standard GreenEdge has built its reputation on. When he is not on a job site, you will find him studying new planting techniques, training his crew, or spending time with his family outdoors.
+                  From full backyard redesigns to weekly maintenance programs, Hector personally oversees every project to make sure the quality meets the standard GreenEdge has built its reputation on. When he is not on a job site, you will find him studying new planting techniques, training his crew, or spending time with his family outdoors.
                 </p>
               </div>
 
