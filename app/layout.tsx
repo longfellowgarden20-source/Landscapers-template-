@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { business } from '../config/business'
 
 export const metadata: Metadata = {
   title: 'GreenEdge Landscaping - Trusted Residential & Commercial Landscapers',
@@ -21,8 +22,25 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: business.name,
+    telephone: business.phone,
+    email: business.email,
+    ...(business.googlePlaceId && {
+      sameAs: [`https://maps.google.com/?cid=${business.googlePlaceId}`],
+    }),
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </head>
       <body className="antialiased">
         {children}
       </body>

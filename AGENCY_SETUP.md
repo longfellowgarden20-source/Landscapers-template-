@@ -170,6 +170,11 @@ export const business = {
 
   // --- How many days ahead customers can book ---
   bookingWindowDays: 60,
+
+  // --- Google Reviews (get from Google Business Profile) ---
+  // Leave as '' if not set up yet
+  googleReviewUrl: '', // e.g. 'https://g.page/r/YOUR_PLACE_ID/review'
+  googlePlaceId: '',   // e.g. 'ChIJ...' — used for SEO structured data
 }
 ```
 
