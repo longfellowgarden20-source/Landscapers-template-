@@ -88,7 +88,7 @@ export function Navigation() {
           style={{ top: '64px' }} // height of the nav bar
         >
           {/* Scrollable link list */}
-          <div className="flex-1 overflow-y-auto px-4 py-4">
+          <div className="flex-1 overflow-y-auto px-4 py-4 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100" style={{ scrollbarColor: '#cbd5e1 #f1f5f9', scrollbarWidth: 'thin' }}>
             {links.map(({ href, label }) => (
               <Link
                 key={href}
