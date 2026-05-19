@@ -12,6 +12,7 @@ const links = [
   { href: '/our-work', label: 'Our Work' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/reviews', label: 'Reviews' },
+  { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ]
 
