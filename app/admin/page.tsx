@@ -5,12 +5,22 @@ import { business } from '../../config/business'
 import {
   LogOut, RefreshCw, CheckCircle2, XCircle, Trash2,
   CalendarDays, Clock, User, Mail, Phone, Briefcase,
-  ChevronDown, Search, Ban,
+  ChevronDown, Search, Ban, Star,
 } from 'lucide-react'
 
 // ── types ─────────────────────────────────────────────────────
 
 type Status = 'pending' | 'confirmed' | 'cancelled'
+type AdminTab = 'appointments' | 'blocked' | 'reviews'
+
+interface Review {
+  id: string
+  name: string
+  rating: number
+  comment: string
+  approved: boolean
+  created_at: string
+}
 
 interface Appointment {
   id: string
@@ -104,7 +114,7 @@ function PasswordGate({ onAuth }: { onAuth: () => void }) {
 
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false)
-  const [activeTab, setActiveTab] = useState<'appointments' | 'blocked'>('appointments')
+  const [activeTab, setActiveTab] = useState<AdminTab>('appointments')
   const [appointments, setAppointments] = useState<Appointment[]>([])
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
@@ -151,6 +161,38 @@ export default function AdminPage() {
     setBlockedDates((prev) => prev.filter((d) => d !== date))
   }
 
+  // reviews state
+  const [reviews, setReviews] = useState<Review[]>([])
+  const [reviewsLoading, setReviewsLoading] = useState(false)
+
+  const fetchReviews = useCallback(async () => {
+    setReviewsLoading(true)
+    try {
+      const res = await fetch('/api/reviews', { method: 'PUT' })
+      if (res.ok) {
+        const data = await res.json()
+        setReviews(data.reviews ?? [])
+      }
+    } finally {
+      setReviewsLoading(false)
+    }
+  }, [])
+
+  async function approveReview(id: string, approved: boolean) {
+    await fetch('/api/reviews', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, approved }),
+    })
+    setReviews((prev) => prev.map((r) => r.id === id ? { ...r, approved } : r))
+  }
+
+  async function deleteReview(id: string) {
+    if (!confirm('Delete this review? This cannot be undone.')) return
+    await fetch(`/api/reviews?id=${id}`, { method: 'DELETE' })
+    setReviews((prev) => prev.filter((r) => r.id !== id))
+  }
+
   const fetchAppointments = useCallback(async () => {
     setLoading(true)
     try {
@@ -171,8 +213,9 @@ export default function AdminPage() {
     if (authed) {
       fetchAppointments()
       fetchBlockedDates()
+      fetchReviews()
     }
-  }, [authed, fetchAppointments, fetchBlockedDates])
+  }, [authed, fetchAppointments, fetchBlockedDates, fetchReviews])
 
   async function updateStatus(id: string, status: Status) {
     await fetch(`${business.supabaseUrl}/rest/v1/appointments?id=eq.${id}`, {
@@ -268,6 +311,18 @@ export default function AdminPage() {
               <span className="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full">{blockedDates.length}</span>
             )}
           </button>
+          <button
+            onClick={() => setActiveTab('reviews')}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${activeTab === 'reviews' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            <Star className="w-4 h-4" />
+            Reviews
+            {reviews.filter((r) => !r.approved).length > 0 && (
+              <span className="bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-0.5 rounded-full">
+                {reviews.filter((r) => !r.approved).length}
+              </span>
+            )}
+          </button>
         </div>
       </div>
 
@@ -328,6 +383,78 @@ export default function AdminPage() {
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ── Reviews Tab ── */}
+        {activeTab === 'reviews' && (
+          <div>
+            <p className="text-sm text-slate-500 mb-6">
+              Approve reviews to make them visible on the public reviews page. Pending reviews are shown first.
+            </p>
+            {reviewsLoading ? (
+              <div className="text-center py-16 text-slate-400">
+                <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-3" />
+                <p>Loading reviews...</p>
+              </div>
+            ) : reviews.length === 0 ? (
+              <div className="text-center py-16 text-slate-400 border-2 border-dashed border-slate-200 rounded-2xl">
+                <Star className="w-8 h-8 mx-auto mb-3 opacity-30" />
+                <p className="font-medium text-slate-500">No reviews yet.</p>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                {[...reviews].sort((a, b) => Number(a.approved) - Number(b.approved)).map((r) => (
+                  <div key={r.id} className={`bg-white rounded-2xl border-2 p-5 ${r.approved ? 'border-green-100' : 'border-yellow-200'}`}>
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="font-semibold text-slate-900 text-sm">{r.name}</span>
+                          <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold border ${r.approved ? 'bg-green-100 text-green-800 border-green-200' : 'bg-yellow-100 text-yellow-800 border-yellow-200'}`}>
+                            {r.approved ? 'Approved' : 'Pending'}
+                          </span>
+                          <div className="flex gap-0.5">
+                            {[1,2,3,4,5].map((n) => (
+                              <Star key={n} className={`w-3.5 h-3.5 ${n <= r.rating ? 'fill-yellow-400 text-yellow-400' : 'text-slate-200'}`} />
+                            ))}
+                          </div>
+                        </div>
+                        <p className="text-sm text-slate-600 leading-relaxed mb-2">&ldquo;{r.comment}&rdquo;</p>
+                        <p className="text-xs text-slate-400">
+                          {new Date(r.created_at).toLocaleString()}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {r.approved ? (
+                          <button
+                            onClick={() => approveReview(r.id, false)}
+                            title="Unapprove"
+                            className="p-2 rounded-xl text-yellow-600 hover:bg-yellow-50 transition"
+                          >
+                            <XCircle className="w-5 h-5" />
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => approveReview(r.id, true)}
+                            title="Approve"
+                            className="p-2 rounded-xl text-green-600 hover:bg-green-50 transition"
+                          >
+                            <CheckCircle2 className="w-5 h-5" />
+                          </button>
+                        )}
+                        <button
+                          onClick={() => deleteReview(r.id)}
+                          title="Delete"
+                          className="p-2 rounded-xl text-red-500 hover:bg-red-50 transition"
+                        >
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
