@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
 
@@ -27,11 +28,14 @@ export default function AboutPage() {
 
             {/* Photo */}
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-[0_20px_60px_-15px_rgba(58,125,68,0.3)]">
-                <img
+              <div className="rounded-3xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-[0_20px_60px_-15px_rgba(58,125,68,0.3)] relative">
+                <Image
                   src="/owner.png"
                   alt="Hector Diaz, Owner of GreenEdge Landscaping"
-                  className="w-full h-full object-cover object-top"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 90vw, 400px"
+                  priority
                 />
               </div>
               {/* Badge */}
