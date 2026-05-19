@@ -1,5 +1,17 @@
+import type { Metadata } from 'next'
 import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Get a Free Landscaping Quote in Long Beach, CA',
+  description: 'Contact GreenEdge Landscaping for a free quote on lawn care, garden design, or commercial landscaping in Long Beach, CA. Call (555) 123-4567 or fill out our quick form.',
+  alternates: { canonical: 'https://greenedgelandscaping.com/contact' },
+  openGraph: {
+    title: 'Contact GreenEdge | Free Landscaping Quote in Long Beach, CA',
+    description: 'Get a free landscaping quote from GreenEdge in Long Beach, CA. Call or fill out our form — we respond fast.',
+    url: 'https://greenedgelandscaping.com/contact',
+  },
+}
 
 export default function ContactPage() {
   return (

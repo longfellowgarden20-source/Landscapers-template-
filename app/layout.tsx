@@ -3,8 +3,35 @@ import './globals.css'
 import { business } from '../config/business'
 
 export const metadata: Metadata = {
-  title: 'GreenEdge Landscaping - Trusted Residential & Commercial Landscapers',
-  description: 'Professional landscapers providing beautiful, reliable lawn and garden services for homes and businesses.',
+  metadataBase: new URL('https://greenedgelandscaping.com'),
+  title: {
+    default: 'GreenEdge Landscaping | Lawn Care & Landscape Design in Long Beach, CA',
+    template: '%s | GreenEdge Landscaping',
+  },
+  description: 'GreenEdge Landscaping provides professional lawn care, residential landscaping, garden design, and commercial grounds maintenance in Long Beach, CA. 20+ years of experience. Book online today.',
+  keywords: ['landscaping Long Beach', 'lawn care Long Beach CA', 'landscape design', 'garden design', 'commercial landscaping', 'lawn maintenance', 'tree care', 'GreenEdge Landscaping'],
+  authors: [{ name: 'GreenEdge Landscaping' }],
+  creator: 'GreenEdge Landscaping',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'GreenEdge Landscaping',
+    title: 'GreenEdge Landscaping | Lawn Care & Landscape Design in Long Beach, CA',
+    description: 'Professional lawn care, residential landscaping, and garden design in Long Beach, CA. 20+ years of experience. Book online.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GreenEdge Landscaping | Long Beach, CA',
+    description: 'Professional lawn care, landscaping, and garden design in Long Beach, CA.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   icons: {
     icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🌿</text></svg>',
   },

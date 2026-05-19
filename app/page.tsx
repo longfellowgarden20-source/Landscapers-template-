@@ -1,5 +1,17 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Navigation } from './components/Navigation'
+
+export const metadata: Metadata = {
+  title: 'GreenEdge Landscaping | Lawn Care & Landscape Design in Long Beach, CA',
+  description: 'GreenEdge Landscaping — trusted lawn care, residential landscaping, garden design, and commercial grounds maintenance in Long Beach, CA. Book an appointment online.',
+  alternates: { canonical: 'https://greenedgelandscaping.com' },
+  openGraph: {
+    title: 'GreenEdge Landscaping | Lawn Care & Landscape Design in Long Beach, CA',
+    description: 'Trusted lawn care and landscaping in Long Beach, CA. Book online today.',
+    url: 'https://greenedgelandscaping.com',
+  },
+}
 import { HeroSection } from './components/HeroSection'
 import { ServiceAreaSection } from './components/ServiceAreaSection'
 import { Footer } from './components/Footer'

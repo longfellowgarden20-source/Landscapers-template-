@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Navigation } from '../../components/Navigation'
@@ -5,6 +6,22 @@ import { CTASection } from '../../components/CTASection'
 import { Footer } from '../../components/Footer'
 import { ArrowLeft, Tag } from 'lucide-react'
 import { projects } from '../projects'
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+  if (!project) return {}
+  return {
+    title: `${project.title} | GreenEdge Landscaping Portfolio`,
+    description: project.description + ' Serving Long Beach, CA and surrounding areas.',
+    alternates: { canonical: `https://greenedgelandscaping.com/our-work/${slug}` },
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: `https://greenedgelandscaping.com/our-work/${slug}`,
+    },
+  }
+}
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }))

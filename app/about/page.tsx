@@ -1,7 +1,19 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
+
+export const metadata: Metadata = {
+  title: 'About Us | Hector Diaz & GreenEdge Landscaping',
+  description: 'Meet Hector Diaz, founder of GreenEdge Landscaping with 20+ years of experience in residential and commercial landscaping in Long Beach, CA. Quality craftsmanship you can trust.',
+  alternates: { canonical: 'https://greenedgelandscaping.com/about' },
+  openGraph: {
+    title: 'About GreenEdge Landscaping | Hector Diaz, Founder',
+    description: 'Meet Hector Diaz — 20+ years of landscaping experience serving Long Beach and surrounding areas.',
+    url: 'https://greenedgelandscaping.com/about',
+  },
+}
 
 export default function AboutPage() {
   return (

@@ -1,5 +1,17 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Navigation } from '../components/Navigation'
+
+export const metadata: Metadata = {
+  title: 'Our Work | Landscaping Projects in Long Beach & Surrounding Areas',
+  description: 'Browse real landscaping projects completed by GreenEdge — backyard transformations, curb appeal redesigns, garden bed installations, commercial grounds, and more in Long Beach, CA.',
+  alternates: { canonical: 'https://greenedgelandscaping.com/our-work' },
+  openGraph: {
+    title: 'Landscaping Projects in Long Beach, CA | GreenEdge Portfolio',
+    description: 'See real before-and-after landscaping projects from GreenEdge across Long Beach and surrounding areas.',
+    url: 'https://greenedgelandscaping.com/our-work',
+  },
+}
 import { CTASection } from '../components/CTASection'
 import { Footer } from '../components/Footer'
 import { projects } from './projects'
