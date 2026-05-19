@@ -2,51 +2,7 @@ import Link from 'next/link'
 import { Navigation } from '../components/Navigation'
 import { CTASection } from '../components/CTASection'
 import { Footer } from '../components/Footer'
-
-const projects = [
-  {
-    title: 'Full Backyard Transformation',
-    category: 'Residential Design',
-    description: 'Complete redesign of a neglected backyard — new sod, raised planting beds, stone pathway, and perimeter shrubs.',
-    image: 'https://placehold.co/800x600/3a7d44/ffffff?text=Backyard+Transformation',
-    tags: ['Sod Installation', 'Garden Beds', 'Stone Work'],
-  },
-  {
-    title: 'Commercial Grounds Refresh',
-    category: 'Commercial Maintenance',
-    description: 'Seasonal overhaul for a local office complex including mulching, trimming, and fresh seasonal plantings at the entrance.',
-    image: 'https://placehold.co/800x600/2d6235/ffffff?text=Commercial+Grounds',
-    tags: ['Mulching', 'Seasonal Planting', 'Trimming'],
-  },
-  {
-    title: 'Front Yard Curb Appeal',
-    category: 'Residential Design',
-    description: 'Stripped out overgrown shrubs and replaced with a clean modern landscape featuring ornamental grasses and river rock.',
-    image: 'https://placehold.co/800x600/1e4d2b/ffffff?text=Curb+Appeal',
-    tags: ['Shrub Removal', 'Ornamental Grass', 'River Rock'],
-  },
-  {
-    title: 'Weekly Lawn Maintenance',
-    category: 'Ongoing Maintenance',
-    description: 'Recurring weekly service for a residential client — mowing, edging, blowing, and seasonal fertilization program.',
-    image: 'https://placehold.co/800x600/4a8f55/ffffff?text=Lawn+Maintenance',
-    tags: ['Mowing', 'Edging', 'Fertilization'],
-  },
-  {
-    title: 'Garden Bed Installation',
-    category: 'Residential Design',
-    description: 'Designed and installed three raised garden beds with custom soil mix, drip irrigation, and a mix of perennials and annuals.',
-    image: 'https://placehold.co/800x600/3a7d44/ffffff?text=Garden+Beds',
-    tags: ['Raised Beds', 'Drip Irrigation', 'Perennials'],
-  },
-  {
-    title: 'Tree & Shrub Pruning',
-    category: 'Tree Care',
-    description: 'Large-scale pruning job across a residential property with 12 mature trees and 20+ shrubs shaped for the season.',
-    image: 'https://placehold.co/800x600/2d6235/ffffff?text=Tree+%26+Shrub+Care',
-    tags: ['Tree Pruning', 'Shrub Shaping', 'Cleanup'],
-  },
-]
+import { projects } from './projects'
 
 const categories = ['All', 'Residential Design', 'Commercial Maintenance', 'Ongoing Maintenance', 'Tree Care']
 
@@ -92,8 +48,9 @@ export default function OurWorkPage() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <div
-              key={project.title}
+            <Link
+              key={project.slug}
+              href={`/our-work/${project.slug}`}
               className="group rounded-2xl overflow-hidden border-2 border-green-100 bg-white hover:border-accent hover:shadow-[0_8px_40px_-12px_rgba(58,125,68,0.25)] transition-all duration-300"
             >
               {/* Image */}
@@ -126,8 +83,11 @@ export default function OurWorkPage() {
                     </span>
                   ))}
                 </div>
+                <p className="text-xs text-accent font-semibold mt-4 group-hover:underline">
+                  View project &rarr;
+                </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
