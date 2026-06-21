@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Check, Phone } from 'lucide-react'
+import { Check, Phone, MessageSquare } from 'lucide-react'
 
 const plans = [
   {
@@ -88,18 +88,31 @@ export function PricingSection() {
                   )}
                 </div>
 
-                {/* Call CTA */}
-                <Link
-                  href="tel:+15627869827"
-                  className={`w-full py-3 sm:py-3.5 rounded-lg font-semibold mb-8 transition-all duration-200 hover:scale-105 active:scale-95 text-sm sm:text-base flex items-center justify-center gap-2 ${
-                    plan.featured
-                      ? 'bg-white text-green-900 hover:bg-green-50'
-                      : 'bg-accent text-white hover:bg-accent-dark'
-                  }`}
-                >
-                  <Phone className="w-4 h-4" />
-                  {plan.cta}
-                </Link>
+                {/* CTAs */}
+                <div className="flex gap-3 mb-8">
+                  <Link
+                    href="tel:+15627869827"
+                    className={`flex-1 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 active:scale-95 text-sm flex items-center justify-center gap-2 ${
+                      plan.featured
+                        ? 'bg-white text-green-900 hover:bg-green-50'
+                        : 'bg-accent text-white hover:bg-accent-dark'
+                    }`}
+                  >
+                    <Phone className="w-4 h-4" />
+                    Call
+                  </Link>
+                  <Link
+                    href="sms:+15627869827"
+                    className={`flex-1 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 active:scale-95 text-sm flex items-center justify-center gap-2 ${
+                      plan.featured
+                        ? 'bg-green-600 text-white hover:bg-green-500'
+                        : 'border-2 border-accent text-accent hover:bg-green-50'
+                    }`}
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    Text
+                  </Link>
+                </div>
 
                 <div className="space-y-3 sm:space-y-4 flex-1">
                   {plan.features.map((feature, fIndex) => (
