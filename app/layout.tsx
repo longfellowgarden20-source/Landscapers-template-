@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { business } from '../config/business'
+import { CallButton } from './components/CallButton'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://diazgardening.com'),
@@ -70,6 +71,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
+        <CallButton />
       </body>
     </html>
   )
