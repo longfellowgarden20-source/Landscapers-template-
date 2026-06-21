@@ -50,12 +50,6 @@ export function HeroSection() {
             </Link>
           </div>
 
-          {/* Social proof */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 pt-2 text-xs sm:text-sm text-slate-500">
-            <span>⭐ 4.9/5 from 200+ customers</span>
-            <div className="hidden sm:block w-px h-4 bg-slate-300"></div>
-            <span>Trusted by homeowners and local businesses</span>
-          </div>
         </div>
       </div>
     </section>
