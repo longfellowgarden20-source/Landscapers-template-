@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Phone, Mail } from 'lucide-react'
+import { Phone, Mail, MessageSquare } from 'lucide-react'
 import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
 import { business } from '../../config/business'
@@ -42,6 +42,19 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-accent group-hover:text-green-100 transition-colors duration-200">Call Us Now</p>
                   <p className="text-lg font-bold text-slate-900 group-hover:text-white transition-colors duration-200">{business.phone}</p>
+                </div>
+              </Link>
+
+              <Link
+                href={`sms:+1${business.phone.replace(/\D/g, '')}`}
+                className="group flex items-center gap-4 w-full rounded-2xl border-2 border-slate-200 bg-white px-6 py-4 hover:border-accent hover:shadow-[0_8px_24px_-6px_rgba(58,125,68,0.2)] transition-all duration-200 active:scale-[0.98]"
+              >
+                <div className="w-11 h-11 rounded-xl bg-slate-100 group-hover:bg-accent flex items-center justify-center flex-shrink-0 transition-colors duration-200">
+                  <MessageSquare className="w-5 h-5 text-slate-500 group-hover:text-white transition-colors duration-200" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 group-hover:text-accent transition-colors duration-200">Text Us</p>
+                  <p className="text-lg font-bold text-slate-900">{business.phone}</p>
                 </div>
               </Link>
 
