@@ -59,7 +59,7 @@ export default function FaqPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-green-100 text-base sm:text-lg">
-            Everything you need to know about working with GreenEdge Landscaping.
+            Everything you need to know about working with Diaz Gardening Services.
           </p>
         </div>
       </section>

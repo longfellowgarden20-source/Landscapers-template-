@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin', '/api/'],
       },
     ],
-    sitemap: 'https://greenedgelandscaping.com/sitemap.xml',
+    sitemap: 'https://diazgardening.com/sitemap.xml',
   }
 }

@@ -5,9 +5,9 @@
 
 export const business = {
   // --- Branding ---
-  name: 'GreenEdge Landscaping',
-  phone: '(555) 123-4567',
-  email: 'hello@greenedge.com',
+  name: 'Diaz Gardening Services',
+  phone: '(562) 786-9827',
+  email: 'hello@diazgardening.com',
 
   // --- Supabase (Settings → API in your Supabase project) ---
   supabaseUrl: 'https://gctajxnmxbeuerncdjch.supabase.co',
@@ -16,7 +16,7 @@ export const business = {
   supabaseServiceKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjdGFqeG5teGJldWVybmNkamNoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTA1OTU4OCwiZXhwIjoyMDk0NjM1NTg4fQ.3DS8zOMCQu9E_4v6km_q0txBAbrPNnbakZW_kcn85zA',
 
   // --- Admin dashboard password (change this per client) ---
-  adminPassword: 'greenedge2026',
+  adminPassword: 'diazgardening2026',
 
   // --- Services shown in the booking form dropdown ---
   services: [

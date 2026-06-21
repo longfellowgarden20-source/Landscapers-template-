@@ -14,7 +14,7 @@ export function Footer() {
               <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center font-bold text-sm">
                 🌿
               </div>
-              <span className="font-display text-white font-bold">GreenEdge</span>
+              <span className="font-display text-white font-bold">Diaz Gardening</span>
             </div>
             <p className="text-xs sm:text-sm text-green-200">
               Certified landscapers delivering beautiful, reliable service for homes and businesses.
@@ -60,7 +60,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8">
             {/* Copyright */}
             <p className="text-xs sm:text-sm text-green-300 text-center sm:text-left">
-              © {currentYear} GreenEdge Landscaping. All rights reserved.
+              © {currentYear} Diaz Gardening Services. All rights reserved.
             </p>
 
             {/* Social Links */}

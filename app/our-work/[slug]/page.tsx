@@ -12,13 +12,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = projects.find((p) => p.slug === slug)
   if (!project) return {}
   return {
-    title: `${project.title} | GreenEdge Landscaping Portfolio`,
+    title: `${project.title} | Diaz Gardening Services Portfolio`,
     description: project.description + ' Serving Long Beach, CA and surrounding areas.',
-    alternates: { canonical: `https://greenedgelandscaping.com/our-work/${slug}` },
+    alternates: { canonical: `https://diazgardening.com/our-work/${slug}` },
     openGraph: {
       title: project.title,
       description: project.description,
-      url: `https://greenedgelandscaping.com/our-work/${slug}`,
+      url: `https://diazgardening.com/our-work/${slug}`,
     },
   }
 }

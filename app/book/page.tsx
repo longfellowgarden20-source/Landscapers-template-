@@ -367,7 +367,7 @@ export default function BookPage() {
               <input
                 type="tel"
                 required
-                placeholder="(555) 123-4567"
+                placeholder="(562) 786-9827"
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"

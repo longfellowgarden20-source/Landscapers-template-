@@ -5,13 +5,13 @@ import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
 
 export const metadata: Metadata = {
-  title: 'About Us | Hector Diaz & GreenEdge Landscaping',
-  description: 'Meet Hector Diaz, founder of GreenEdge Landscaping with 20+ years of experience in residential and commercial landscaping in Long Beach, CA. Quality craftsmanship you can trust.',
-  alternates: { canonical: 'https://greenedgelandscaping.com/about' },
+  title: 'About Us | Hector Diaz & Diaz Gardening Services',
+  description: 'Meet Hector Diaz, founder of Diaz Gardening Services with 20+ years of experience in residential and commercial landscaping in Long Beach, CA. Quality craftsmanship you can trust.',
+  alternates: { canonical: 'https://diazgardening.com/about' },
   openGraph: {
-    title: 'About GreenEdge Landscaping | Hector Diaz, Founder',
+    title: 'About Diaz Gardening Services | Hector Diaz, Founder',
     description: 'Meet Hector Diaz — 20+ years of landscaping experience serving Long Beach and surrounding areas.',
-    url: 'https://greenedgelandscaping.com/about',
+    url: 'https://diazgardening.com/about',
   },
 }
 
@@ -23,12 +23,12 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="max-w-3xl">
-          <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold mb-4">About GreenEdge</p>
+          <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold mb-4">About Diaz Gardening</p>
           <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-950 mb-6 leading-tight">
             Built on hard work, rooted in craftsmanship
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            GreenEdge Landscaping has been transforming outdoor spaces for homeowners and businesses across the region for over two decades. Everything we do is guided by one principle — if we would not be proud to put our name on it, we do not deliver it.
+            Diaz Gardening Services has been transforming outdoor spaces for homeowners and businesses across the region for over two decades. Everything we do is guided by one principle — if we would not be proud to put our name on it, we do not deliver it.
           </p>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default function AboutPage() {
               <div className="rounded-3xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0 shadow-[0_20px_60px_-15px_rgba(58,125,68,0.3)] relative">
                 <Image
                   src="/owner.webp"
-                  alt="Hector Diaz, Owner of GreenEdge Landscaping"
+                  alt="Hector Diaz, Owner of Diaz Gardening Services"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 1024px) 90vw, 400px"
@@ -63,17 +63,17 @@ export default function AboutPage() {
               <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-950 mb-1 leading-tight">
                 Hector Diaz
               </h2>
-              <p className="text-base text-accent font-medium mb-6">Founder & Owner, GreenEdge Landscaping</p>
+              <p className="text-base text-accent font-medium mb-6">Founder & Owner, Diaz Gardening Services</p>
 
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
                   What started as a summer job cutting neighbors' lawns turned into a lifelong career built on genuine love for the craft. With over 20 years of hands-on experience in residential and commercial landscaping, Hector has seen — and handled — just about every challenge a property can throw at you.
                 </p>
                 <p>
-                  Hector founded GreenEdge with a simple belief: that every customer deserves the same care and attention he would give his own home. That means showing up on time, communicating clearly, and never cutting corners — no matter the size of the job.
+                  Hector founded Diaz Gardening Services with a simple belief: that every customer deserves the same care and attention he would give his own home. That means showing up on time, communicating clearly, and never cutting corners — no matter the size of the job.
                 </p>
                 <p>
-                  From full backyard redesigns to weekly maintenance programs, Hector personally oversees every project to make sure the quality meets the standard GreenEdge has built its reputation on. When he is not on a job site, you will find him studying new planting techniques, training his crew, or spending time with his family outdoors.
+                  From full backyard redesigns to weekly maintenance programs, Hector personally oversees every project to make sure the quality meets the standard Diaz Gardening has built its reputation on. When he is not on a job site, you will find him studying new planting techniques, training his crew, or spending time with his family outdoors.
                 </p>
               </div>
 

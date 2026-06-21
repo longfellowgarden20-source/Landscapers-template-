@@ -38,7 +38,7 @@ export function Navigation() {
                 🌿
               </div>
               <span className="font-display text-lg font-bold text-slate-900">
-                GreenEdge
+                Diaz Gardening
               </span>
             </Link>
 

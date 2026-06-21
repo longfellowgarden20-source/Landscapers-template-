@@ -4,12 +4,12 @@ import { Navigation } from '../components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Our Work | Landscaping Projects in Long Beach & Surrounding Areas',
-  description: 'Browse real landscaping projects completed by GreenEdge — backyard transformations, curb appeal redesigns, garden bed installations, commercial grounds, and more in Long Beach, CA.',
-  alternates: { canonical: 'https://greenedgelandscaping.com/our-work' },
+  description: 'Browse real landscaping projects completed by Diaz Gardening Services — backyard transformations, curb appeal redesigns, garden bed installations, commercial grounds, and more in Long Beach, CA.',
+  alternates: { canonical: 'https://diazgardening.com/our-work' },
   openGraph: {
-    title: 'Landscaping Projects in Long Beach, CA | GreenEdge Portfolio',
-    description: 'See real before-and-after landscaping projects from GreenEdge across Long Beach and surrounding areas.',
-    url: 'https://greenedgelandscaping.com/our-work',
+    title: 'Landscaping Projects in Long Beach, CA | Diaz Gardening Portfolio',
+    description: 'See real before-and-after landscaping projects from Diaz Gardening Services across Long Beach and surrounding areas.',
+    url: 'https://diazgardening.com/our-work',
   },
 }
 import { CTASection } from '../components/CTASection'
@@ -126,7 +126,7 @@ export default function OurWorkPage() {
                 location: 'Lakewood, CA',
               },
               {
-                quote: 'Great communication, fair pricing, and the results speak for themselves. Highly recommend GreenEdge.',
+                quote: 'Great communication, fair pricing, and the results speak for themselves. Highly recommend Diaz Gardening.',
                 name: 'Sandra K.',
                 location: 'Torrance, CA',
               },

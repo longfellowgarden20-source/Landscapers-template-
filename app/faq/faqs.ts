@@ -5,7 +5,7 @@ export const faqs = [
   },
   {
     question: 'Do you offer free estimates?',
-    answer: 'Yes. We offer free consultations and estimates for all new customers. You can book a consultation directly through our website or call us at (555) 123-4567. We will visit your property, assess the work, and give you a clear, written quote.',
+    answer: 'Yes. We offer free consultations and estimates for all new customers. You can book a consultation directly through our website or call us at (562) 786-9827. We will visit your property, assess the work, and give you a clear, written quote.',
   },
   {
     question: 'What areas do you serve?',
@@ -25,10 +25,10 @@ export const faqs = [
   },
   {
     question: 'Are your landscapers licensed and insured?',
-    answer: 'Yes. GreenEdge Landscaping is fully licensed and insured. All of our crew members are trained professionals. You are protected on every job — no exceptions.',
+    answer: 'Yes. Diaz Gardening Services is fully licensed and insured. All of our crew members are trained professionals. You are protected on every job — no exceptions.',
   },
   {
     question: 'How do I book an appointment?',
-    answer: 'You can book directly on our website using the Book Appointment button — pick your service, choose a date and time that works for you, and fill in your contact details. It takes less than 2 minutes. You can also call us at (555) 123-4567.',
+    answer: 'You can book directly on our website using the Book Appointment button — pick your service, choose a date and time that works for you, and fill in your contact details. It takes less than 2 minutes. You can also call us at (562) 786-9827.',
   },
 ]

@@ -38,7 +38,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
-            GreenEdge Landscaping transforms your property with expert lawn care, garden design, and reliable maintenance. Count on certified professionals for every job.
+            Diaz Gardening Services transforms your property with expert lawn care, garden design, and reliable maintenance. Count on certified professionals for every job.
           </p>
 
           {/* CTA Buttons */}

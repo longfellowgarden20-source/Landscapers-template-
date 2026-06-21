@@ -8,13 +8,13 @@ import { faqs } from './faq/faqs'
 import { ChevronDown } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'GreenEdge Landscaping | Lawn Care & Landscape Design in Long Beach, CA',
-  description: 'GreenEdge Landscaping — trusted lawn care, residential landscaping, garden design, and commercial grounds maintenance in Long Beach, CA. Book an appointment online.',
-  alternates: { canonical: 'https://greenedgelandscaping.com' },
+  title: 'Diaz Gardening Services | Lawn Care & Landscape Design in Long Beach, CA',
+  description: 'Diaz Gardening Services — trusted lawn care, residential landscaping, garden design, and commercial grounds maintenance in Long Beach, CA. Book an appointment online.',
+  alternates: { canonical: 'https://diazgardening.com' },
   openGraph: {
-    title: 'GreenEdge Landscaping | Lawn Care & Landscape Design in Long Beach, CA',
+    title: 'Diaz Gardening Services | Lawn Care & Landscape Design in Long Beach, CA',
     description: 'Trusted lawn care and landscaping in Long Beach, CA. Book online today.',
-    url: 'https://greenedgelandscaping.com',
+    url: 'https://diazgardening.com',
   },
 }
 
@@ -27,18 +27,18 @@ export default function Home() {
       <section className="py-20 bg-green-50 border-t border-green-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-sm uppercase tracking-[0.3em] text-accent font-semibold mb-4">Explore GreenEdge</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-accent font-semibold mb-4">Explore Diaz Gardening</p>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-950">
               Everything you need to know about us.
             </h2>
             <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
-              Discover our certified landscapers, transparent packages, and why local customers choose GreenEdge for beautiful, reliable outdoor work.
+              Discover our certified landscapers, transparent packages, and why local customers choose Diaz Gardening for beautiful, reliable outdoor work.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Link href="/about" className="group block rounded-3xl border-2 border-green-200 bg-white p-8 hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(58,125,68,0.3)] transition">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-accent transition-colors">About GreenEdge</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-accent transition-colors">About Diaz Gardening</h3>
               <p className="text-slate-500">Discover our certified landscapers, local service area, and commitment to quality and craftsmanship.</p>
             </Link>
             <Link href="/services" className="group block rounded-3xl border-2 border-green-200 bg-white p-8 hover:border-accent hover:shadow-[0_8px_30px_-8px_rgba(58,125,68,0.3)] transition">
