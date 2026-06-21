@@ -3,7 +3,7 @@ import { Check } from 'lucide-react'
 const plans = [
   {
     name: 'Lawn Care Visit',
-    price: '89',
+    price: '85',
     description: 'One-time lawn maintenance for a clean, manicured look.',
     features: [
       'Mowing & edging',

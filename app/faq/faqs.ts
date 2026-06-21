@@ -1,7 +1,7 @@
 export const faqs = [
   {
     question: 'How much does lawn care cost in Long Beach, CA?',
-    answer: 'Our standard lawn care visits start at $89. Pricing depends on the size of your property and the services needed. We offer free on-site quotes so you always know the exact cost before any work begins — no surprise fees.',
+    answer: 'Our standard lawn care visits start at $85. Pricing depends on the size of your property and the services needed. We offer free on-site quotes so you always know the exact cost before any work begins — no surprise fees.',
   },
   {
     question: 'Do you offer free estimates?',
