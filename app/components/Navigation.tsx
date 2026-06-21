@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
+import { business } from '../../config/business'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -58,10 +59,11 @@ export function Navigation() {
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center">
               <Link
-                href="/book"
-                className="px-4 py-2.5 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium whitespace-nowrap"
+                href={`tel:+1${business.phone.replace(/\D/g, '')}`}
+                className="flex items-center gap-2 px-4 py-2.5 text-sm bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors font-medium whitespace-nowrap"
               >
-                Book Appointment
+                <Phone className="w-4 h-4" />
+                {business.phone}
               </Link>
             </div>
 
@@ -112,11 +114,12 @@ export function Navigation() {
               Request a Quote
             </Link>
             <Link
-              href="/book"
+              href={`tel:+1${business.phone.replace(/\D/g, '')}`}
               onClick={closeNav}
-              className="w-full py-3 text-sm text-center font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors"
+              className="w-full py-3 text-sm text-center font-semibold text-white bg-accent rounded-xl hover:bg-accent-dark transition-colors flex items-center justify-center gap-2"
             >
-              Book Appointment
+              <Phone className="w-4 h-4" />
+              Call {business.phone}
             </Link>
           </div>
         </div>
