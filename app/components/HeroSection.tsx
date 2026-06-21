@@ -28,14 +28,14 @@ export function HeroSection() {
           </div>
 
           {/* Main headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-slate-900 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-slate-900 leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.15)]">
             Beautiful outdoor spaces for
             <br className="hidden sm:block" />
-            <span className="text-accent">homes and businesses</span>
+            <span className="text-accent drop-shadow-[0_1px_3px_rgba(0,0,0,0.15)]">homes and businesses</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)]">
             Diaz Gardening Services transforms your property with expert lawn care, garden design, and reliable maintenance. Count on certified professionals for every job.
           </p>
 
