@@ -1,9 +1,10 @@
-import { Check } from 'lucide-react'
+import Link from 'next/link'
+import { Check, Phone } from 'lucide-react'
 
 const plans = [
   {
     name: 'Lawn Care Visit',
-    price: '85',
+    price: '$85',
     description: 'One-time lawn maintenance for a clean, manicured look.',
     features: [
       'Mowing & edging',
@@ -14,12 +15,12 @@ const plans = [
       'Property walkthrough',
       'No-obligation follow-up estimate',
     ],
-    cta: 'Book a Visit',
+    cta: 'Call to Book a Visit',
     featured: false,
   },
   {
     name: 'Full Landscape Design',
-    price: '1,500',
+    price: 'Custom',
     description: 'Ideal for new installs, full yard makeovers, and garden transformations.',
     features: [
       'Custom design consultation',
@@ -29,31 +30,15 @@ const plans = [
       'Irrigation check & setup',
       '1 year plant guarantee',
     ],
-    cta: 'Get a Quote',
+    cta: 'Call for a Quote',
     featured: true,
-  },
-  {
-    name: 'Maintenance Plan',
-    price: 'Custom',
-    description: 'Ongoing care and seasonal service for residential or commercial properties.',
-    features: [
-      'Recurring lawn maintenance',
-      'Seasonal clean-ups',
-      'Fertilization & weed control',
-      'Shrub & tree trimming',
-      'Leaf removal',
-      'Priority scheduling',
-      'Service agreements',
-    ],
-    cta: 'Schedule Consultation',
-    featured: false,
   },
 ]
 
 export function PricingSection() {
   return (
     <section id="pricing" className="w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-green-50 border-t border-green-100">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Section header */}
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
           <p className="text-sm uppercase tracking-[0.28em] text-accent font-semibold">Transparent Pricing</p>
@@ -66,26 +51,23 @@ export function PricingSection() {
         </div>
 
         {/* Pricing cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}
               className={`rounded-2xl transition-all duration-300 ${
                 plan.featured
-                  ? 'border-2 border-accent bg-green-700 shadow-[0_8px_40px_-8px_rgba(58,125,68,0.5)] scale-100 md:scale-105'
+                  ? 'border-2 border-accent bg-green-700 shadow-[0_8px_40px_-8px_rgba(58,125,68,0.5)]'
                   : 'border-2 border-green-200 bg-white hover:border-accent hover:shadow-md'
               }`}
             >
-              {/* Featured badge */}
               {plan.featured && (
                 <div className="px-4 sm:px-6 py-2 bg-green-800 text-white text-xs sm:text-sm font-semibold text-center rounded-t-2xl">
                   Most Popular
                 </div>
               )}
 
-              {/* Card content */}
               <div className="p-6 sm:p-8 flex flex-col h-full">
-                {/* Plan name and description */}
                 <div className="mb-6">
                   <h3 className={`text-xl sm:text-2xl font-bold mb-2 ${plan.featured ? 'text-white' : 'text-slate-900'}`}>
                     {plan.name}
@@ -95,25 +77,30 @@ export function PricingSection() {
                   </p>
                 </div>
 
-                {/* Price */}
                 <div className="mb-6">
                   <div className={`text-4xl sm:text-5xl font-bold ${plan.featured ? 'text-white' : 'text-slate-900'}`}>
-                    {plan.price === 'Custom' ? 'Custom' : `$${plan.price}`}
+                    {plan.price}
                   </div>
+                  {plan.price === 'Custom' && (
+                    <p className={`text-sm mt-1 ${plan.featured ? 'text-green-200' : 'text-slate-500'}`}>
+                      Priced based on your property
+                    </p>
+                  )}
                 </div>
 
-                {/* CTA Button */}
-                <button
-                  className={`w-full py-3 sm:py-3.5 rounded-lg font-medium mb-8 transition-all duration-200 transform hover:scale-105 active:scale-95 text-sm sm:text-base ${
+                {/* Call CTA */}
+                <Link
+                  href="tel:+15627869827"
+                  className={`w-full py-3 sm:py-3.5 rounded-lg font-semibold mb-8 transition-all duration-200 hover:scale-105 active:scale-95 text-sm sm:text-base flex items-center justify-center gap-2 ${
                     plan.featured
                       ? 'bg-white text-green-900 hover:bg-green-50'
                       : 'bg-accent text-white hover:bg-accent-dark'
                   }`}
                 >
+                  <Phone className="w-4 h-4" />
                   {plan.cta}
-                </button>
+                </Link>
 
-                {/* Features list */}
                 <div className="space-y-3 sm:space-y-4 flex-1">
                   {plan.features.map((feature, fIndex) => (
                     <div key={fIndex} className="flex items-start gap-3 sm:gap-4">
@@ -129,10 +116,12 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Footer note */}
         <div className="text-center mt-12 sm:mt-16">
           <p className="text-slate-600 text-sm sm:text-base">
-            Not sure which service is right? <span className="font-semibold">Contact us for a free consultation and custom landscaping estimate.</span>
+            Not sure which service is right?{' '}
+            <Link href="tel:+15627869827" className="font-semibold text-accent hover:underline">
+              Call us for a free consultation.
+            </Link>
           </p>
         </div>
       </div>
